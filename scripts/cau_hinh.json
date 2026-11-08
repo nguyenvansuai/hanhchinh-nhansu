@@ -1,0 +1,9 @@
+{
+  "danh_muc": "hanh-chinh-nhan-su",
+  "shared_cho_tat_ca": ["nguyen-tac-chung.md"],
+  "shared_theo_skill": {
+    "the-thuc-nd30.md": ["soan-van-ban-hanh-chinh", "giay-to-hanh-chinh", "kiem-tra-truoc-trinh-ky", "so-van-ban-di-den", "quy-che-noi-bo", "hoi-hop-su-kien", "ky-luat-lao-dong", "cham-dut-hop-dong"],
+    "quy-dinh-lao-dong-2026.md": ["tuyen-dung", "hop-dong-lao-dong", "onboarding-offboarding", "noi-quy-thoa-uoc", "danh-gia-luong-thuong", "ky-luat-lao-dong", "cham-dut-hop-dong", "bhxh-che-do", "lich-tuan-thu-hcns", "quy-che-noi-bo", "kiem-tra-truoc-trinh-ky"]
+  },
+  "skill_dung_cong_cu": ["soan-van-ban-hanh-chinh", "giay-to-hanh-chinh", "kiem-tra-truoc-trinh-ky", "so-van-ban-di-den", "hoi-hop-su-kien", "tuyen-dung", "hop-dong-lao-dong", "onboarding-offboarding", "danh-gia-luong-thuong", "ky-luat-lao-dong", "cham-dut-hop-dong", "bhxh-che-do", "lich-tuan-thu-hcns", "luu-tru-ho-so"]
+}
