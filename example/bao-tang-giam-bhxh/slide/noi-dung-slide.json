@@ -1,0 +1,66 @@
+{
+  "mau": "#1F4E79",
+  "plugin_ten": "Hành chính – Nhân sự",
+  "tieu_de": "Báo tăng – giảm BHXH tháng 11 không sót, không sai",
+  "tinh_huong": "HCNS công ty công nghệ 40 người · tháng 11 có 9 biến động: vào làm, nghỉ việc, thai sản, nghỉ không lương, tăng lương, \"cộng tác viên\"",
+  "thu_cong": {
+    "buoc": [
+      "Gom ghi chú biến động từ email, Zalo, quyết định",
+      "Đoán phương án: ai tăng, ai giảm, từ tháng nào",
+      "Tự đếm ngày nghỉ trong tháng, tự nhớ mốc 14 ngày",
+      "Tính mức đóng bằng Excel cũ, dễ quên trần",
+      "Gõ vào phần mềm I-VAN"
+    ],
+    "thoi_gian": "Nửa ngày, mỗi tháng lặp lại",
+    "rui_ro": [
+      "Báo giảm sai tháng → đóng thiếu, truy đóng, người lao động hụt sổ",
+      "Bỏ sót \"cộng tác viên\" làm toàn thời gian → bị xử phạt",
+      "Quên trần 50,6 triệu → trừ lương giám đốc thừa 893.000đ/tháng"
+    ]
+  },
+  "plugin": {
+    "buoc": [
+      "Đính kèm danh sách đang đóng + ghi chú biến động, gõ 1 câu",
+      "bhxh-che-do xếp từng người vào tăng / giảm / điều chỉnh, có lý do",
+      "Công cụ ngay_lam_viec đếm ngày không làm việc so với mốc 14 ngày",
+      "Công cụ luong_net_gross tính tiền đóng, tự áp trần",
+      "Xuất Excel + danh sách giấy tờ từng người"
+    ],
+    "thoi_gian": "Khoảng 15 phút, có lý do từng dòng",
+    "loi_ich": [
+      "Không phải nhớ quy tắc 14 ngày, trần lương, đối tượng đóng",
+      "Phát hiện \"cộng tác viên\" thực chất là HĐLĐ",
+      "Có sẵn bảng để nhập I-VAN và việc cần làm với từng người"
+    ]
+  },
+  "demo": {
+    "ten": "9 biến động nhân sự tháng 11/2026",
+    "mo_ta": "Công ty TNHH Công nghệ Bình Minh (giả lập), vùng I · dữ liệu đặt sẵn trong dau-vao/",
+    "dau_vao": [
+      "thong-tin-cong-ty.md (vùng I, làm thứ Hai – thứ Sáu)",
+      "danh-sach-dong-bhxh-thang-10.xlsx (10 người)",
+      "bien-dong-nhan-su-thang-11.xlsx (ghi chú tự do, cài sẵn bẫy)"
+    ],
+    "prompt": [
+      "Tôi là HCNS Công ty TNHH Công nghệ Bình Minh.",
+      "Đính kèm danh sách đang đóng BHXH tháng 10 và ghi chú biến động tháng 11. Hãy:",
+      "1. Lập danh sách báo tăng, giảm, điều chỉnh tháng 11 kèm lý do.",
+      "2. Chỉ ra trường hợp dễ làm sai, vì sao.",
+      "3. Tính tổng tiền BHXH, BHYT, BHTN phải nộp tháng 11, so với tháng 10.",
+      "4. Liệt kê giấy tờ, việc phải làm với từng người.",
+      "Xuất danh sách ra Excel."
+    ],
+    "ket_qua": {
+      "nhan_so": "Tổng nộp BHXH, BHYT, BHTN tháng 11",
+      "so": "55.260.000đ",
+      "y": [
+        "Kê khai 7 người: 2 tăng, 3 giảm, 2 điều chỉnh",
+        "Anh Cường nghỉ 13/11: vẫn đóng T11, giảm từ T12",
+        "\"Cộng tác viên\" chấm công: phải báo tăng",
+        "Thử việc riêng, ốm 10 ngày: không kê khai"
+      ]
+    },
+    "connector": "Drive đọc danh sách lao động, quyết định nhân sự → lưu danh sách vào thư mục BHXH → Gmail tạo nháp hướng dẫn riêng từng người → Calendar nhắc chốt sổ, báo tăng lại.",
+    "nguoi_lam": "tải mẫu mới nhất trên phần mềm I-VAN, đối chiếu quy chế lương (phụ cấp nào phải đóng), tự kê khai, ký số và nộp."
+  }
+}
