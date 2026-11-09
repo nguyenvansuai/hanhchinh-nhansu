@@ -36,3 +36,15 @@ Nội dung thường có: lương – thưởng – phụ cấp, thời giờ l�
 
 ## Đầu ra
 Dự thảo nội quy/TƯLĐTT/quy chế dân chủ · quyết định ban hành · văn bản đề nghị đăng ký + danh mục hồ sơ · lịch các mốc (ban hành → nộp → hiệu lực) · bảng rà soát nội quy cũ.
+
+<!-- KET-NOI:BAT-DAU (sinh tự động từ scripts/ket_noi.json – sửa ở đó rồi chạy build) -->
+## Kết nối ứng dụng
+
+Connector dùng cho skill này: **Google Drive** · **Gmail** · **Google Calendar** · **Microsoft 365 (Outlook, OneDrive/SharePoint, Teams)**. Đọc quy tắc trong `references/ket-noi.md` trước khi dùng.
+
+1. Đọc nội quy, thỏa ước cũ và ý kiến tổ chức đại diện người lao động trên Drive.
+2. Lên lịch đối thoại định kỳ, hội nghị người lao động (sau khi xác nhận); tạo nháp thư mời.
+3. Lưu dự thảo và hồ sơ đăng ký nội quy (gửi Sở Nội vụ) vào thư mục riêng trên Drive.
+
+**Khi chưa kết nối:** làm đủ phần soạn thảo, tính toán; đưa nội dung sẵn để người dùng tự dán vào email, lịch, thư mục; nhắc **một lần** cách bật connector, không dừng việc chỉ vì chưa kết nối.
+<!-- KET-NOI:KET-THUC -->

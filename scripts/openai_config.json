@@ -15,16 +15,6 @@
     "lao-dong",
     "viet-nam"
   ],
-  "mcp": {
-    "name": "hcns-cong-cu",
-    "args": [
-      "${PLUGIN_ROOT}/mcp/server.py"
-    ],
-    "thu_muc_kem": [
-      "mcp",
-      "tools"
-    ]
-  },
   "repository": "https://github.com/nguyenvansuai/hanhchinh-nhansu",
   "category": "Productivity"
 }

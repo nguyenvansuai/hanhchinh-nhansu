@@ -9,11 +9,10 @@ description: Rà soát văn bản trước khi trình lãnh đạo ký — chạ
 
 ## Quy trình
 
-**1. Lấy văn bản** – file .docx/.txt (đường dẫn), nội dung dán vào, hoặc file trên `~~drive` (xác nhận đúng tên, phiên bản mới nhất, người sửa cuối). Nhiều file trùng tên → liệt kê, hỏi.
+**1. Lấy văn bản** – file .docx/.txt (đường dẫn), nội dung dán vào, hoặc file trên Drive (Google Drive / OneDrive) (xác nhận đúng tên, phiên bản mới nhất, người sửa cuối). Nhiều file trùng tên → liệt kê, hỏi.
 
 **2. Rà hình thức bằng công cụ**
-- MCP: `kiem_tra_the_thuc` với `duong_dan` (hoặc `van_ban`).
-- Dòng lệnh: `python3 scripts/cong_cu.py kiem_tra_the_thuc duong_dan=van-ban.docx`
+- Chạy `python3 scripts/cong_cu.py kiem_tra_the_thuc duong_dan=van-ban.docx` (hoặc `van_ban="..."` khi chỉ có nội dung dán vào).
 - Văn bản nội bộ không dùng Quốc hiệu theo quy chế công ty → `co_quoc_hieu=false`.
 
 **3. Rà nội dung bằng mắt** theo `references/checklist-noi-dung.md` (6 nhóm). Công cụ chỉ bắt lỗi hình thức; thẩm quyền, căn cứ, logic phải tự đọc.
@@ -41,3 +40,15 @@ Không dồn mọi thứ vào CHẶN.
 - Không "sửa cho đẹp" mà không nói đã đổi gì.
 - Không khẳng định văn bản "đúng luật"; chỉ kết luận về thể thức và tính nhất quán.
 - Số tiền: chỉ đối chiếu nội bộ văn bản (bằng số ↔ bằng chữ, tổng ↔ các dòng); không xác nhận số đó đúng thực tế.
+
+<!-- KET-NOI:BAT-DAU (sinh tự động từ scripts/ket_noi.json – sửa ở đó rồi chạy build) -->
+## Kết nối ứng dụng
+
+Connector dùng cho skill này: **Google Drive** · **Gmail** · **Microsoft 365 (Outlook, OneDrive/SharePoint, Teams)**. Đọc quy tắc trong `references/ket-noi.md` trước khi dùng.
+
+1. Mở file cần kiểm tra trực tiếp từ Drive hoặc từ tệp đính kèm email khi người dùng chỉ tên file/thư.
+2. Lưu báo cáo kiểm tra thành file mới cạnh file gốc (`..._Bao-cao-kiem-tra`), không sửa file gốc.
+3. Cần gửi người soạn sửa: tạo nháp email liệt kê lỗi CHẶN / CẦN SỬA.
+
+**Khi chưa kết nối:** làm đủ phần soạn thảo, tính toán; đưa nội dung sẵn để người dùng tự dán vào email, lịch, thư mục; nhắc **một lần** cách bật connector, không dừng việc chỉ vì chưa kết nối.
+<!-- KET-NOI:KET-THUC -->

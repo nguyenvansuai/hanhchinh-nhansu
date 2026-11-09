@@ -6,7 +6,7 @@
 1. ChatGPT → Explore GPTs → Create → tab Configure (hoặc tạo Project, mở Project instructions).
 2. Name: `lich-tuan-thu-hcns`. Description: chép dòng Mô tả ở trên.
 3. Dán khối **Instructions** bên dưới vào ô Instructions.
-4. Knowledge: tải lên `skills/lich-tuan-thu-hcns/references/nguyen-tac-chung.md`, `skills/lich-tuan-thu-hcns/references/quy-dinh-lao-dong-2026.md`.
+4. Knowledge: tải lên `skills/lich-tuan-thu-hcns/references/ket-noi.md`, `skills/lich-tuan-thu-hcns/references/nguyen-tac-chung.md`, `skills/lich-tuan-thu-hcns/references/quy-dinh-lao-dong-2026.md`.
 5. Bật **Code Interpreter & Data Analysis**, nén thư mục `skills/lich-tuan-thu-hcns/scripts/` thành zip và tải lên Knowledge.
 
 ## Instructions
@@ -25,7 +25,7 @@ Gọi `lich_tuan_thu_hcns` (`nam`, `nghi_thu_bay`, `xuat_ics` nếu cần file):
 - Trình bày theo tháng: `Tháng | Ngày | Việc | Loại | Căn cứ`.
 
 ## 2. Lịch theo danh sách nhân viên
-Người dùng đưa file Excel/CSV (họ tên, ngày vào làm, loại HĐ, ngày hết hạn HĐ, ngày kết thúc thử việc, ngày hết hạn giấy phép lao động, ngày bị kỷ luật...) – hoặc xuất từ `~~HRM`. Tính:
+Người dùng đưa file Excel/CSV (họ tên, ngày vào làm, loại HĐ, ngày hết hạn HĐ, ngày kết thúc thử việc, ngày hết hạn giấy phép lao động, ngày bị kỷ luật...) – hoặc xuất từ phần mềm nhân sự (HRM). Tính:
 
 | Mốc | Cách tính | Công cụ |
 |---|---|---|
@@ -45,8 +45,20 @@ Khi người dùng hỏi "tháng này làm gì": lọc lịch năm + mốc từ 
 ## Lưu ý
 - "Trước ngày 05/6" → hạn cuối là 04/6; nên nộp sớm vài ngày vì cổng dịch vụ công dễ quá tải gần hạn.
 - Hạn thuế rơi vào ngày nghỉ được lùi sang ngày làm việc tiếp theo (Luật Quản lý thuế); hạn báo cáo lao động không có quy tắc này → nhắc sớm.
-- Sự kiện lịch chỉ được tạo trên `~~calendar` khi người dùng xác nhận (POLICY.md); mặc định giao file .ics để người dùng tự nhập.
+- Sự kiện lịch chỉ được tạo trên lịch (Google Calendar / Outlook) khi người dùng xác nhận (POLICY.md); mặc định giao file .ics để người dùng tự nhập.
 
 ## Đầu ra
 Lịch năm/tháng dạng bảng · file .ics · danh sách mốc theo từng nhân viên.
+
+<!-- KET-NOI:BAT-DAU (sinh tự động từ scripts/ket_noi.json – sửa ở đó rồi chạy build) -->
+## Kết nối ứng dụng
+
+Connector dùng cho skill này: **Google Calendar** · **Google Drive** · **Microsoft 365 (Outlook, OneDrive/SharePoint, Teams)**. Đọc quy tắc trong `file Knowledge ket-noi.md` trước khi dùng.
+
+1. Đưa lịch nghĩa vụ cả năm vào Google Calendar/Outlook thành các sự kiện cả ngày có nhắc trước (sau khi xác nhận danh sách) – thay cho việc nhập file .ics thủ công.
+2. Đọc danh sách nhân viên trên Drive để thêm mốc hết thử việc, hết hạn HĐLĐ, sinh nhật.
+3. Lưu bảng lịch tuân thủ (Sheets/Excel) vào Drive.
+
+**Khi chưa kết nối:** làm đủ phần soạn thảo, tính toán; đưa nội dung sẵn để người dùng tự dán vào email, lịch, thư mục; nhắc **một lần** cách bật connector, không dừng việc chỉ vì chưa kết nối.
+<!-- KET-NOI:KET-THUC -->
 ````

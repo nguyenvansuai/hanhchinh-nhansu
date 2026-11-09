@@ -1,7 +1,7 @@
 {
   "name": "hanhchinh-nhansu",
   "version": "1.0.0",
-  "description": "Plugin Hành chính – Nhân sự (HCNS) cho doanh nghiệp vừa và nhỏ Việt Nam 2026: văn bản đúng thể thức NĐ 30/2020, giấy tờ hành chính, kiểm tra trước trình ký, sổ văn bản đi/đến, lưu trữ hồ sơ, quy chế nội bộ, hội họp – sự kiện; tuyển dụng, hợp đồng lao động, onboarding/offboarding, nội quy – thỏa ước, đánh giá – lương thưởng, kỷ luật, chấm dứt HĐLĐ, BHXH, lịch tuân thủ. Kèm MCP server công cụ tính toán theo BLLĐ 2019 (trợ cấp, phép năm, thời hiệu, lương net/gross, lịch âm, ngày làm việc).",
+  "description": "Plugin Hành chính – Nhân sự (HCNS) cho doanh nghiệp vừa và nhỏ Việt Nam 2026: văn bản đúng thể thức NĐ 30/2020, giấy tờ hành chính, kiểm tra trước trình ký, sổ văn bản đi/đến, lưu trữ hồ sơ, quy chế nội bộ, hội họp – sự kiện; tuyển dụng, hợp đồng lao động, onboarding/offboarding, nội quy – thỏa ước, đánh giá – lương thưởng, kỷ luật, chấm dứt HĐLĐ, BHXH, lịch tuân thủ. Khai báo sẵn connector Gmail, Google Calendar, Google Drive, Microsoft 365, Zoom, Slack; kèm công cụ tính theo BLLĐ 2019 (trợ cấp, phép năm, thời hiệu, lương net/gross, lịch âm, ngày làm việc).",
   "author": {
     "name": "nguyenvansuai",
     "url": "https://github.com/nguyenvansuai"
@@ -9,5 +9,15 @@
   "homepage": "https://github.com/nguyenvansuai/hanhchinh-nhansu",
   "repository": "https://github.com/nguyenvansuai/hanhchinh-nhansu",
   "license": "MIT",
-  "keywords": ["hanh-chinh", "nhan-su", "hcns", "van-thu", "lao-dong", "viet-nam", "nd-30-2020", "bo-luat-lao-dong"]
+  "keywords": [
+    "hanh-chinh",
+    "nhan-su",
+    "hcns",
+    "van-thu",
+    "lao-dong",
+    "viet-nam",
+    "nd-30-2020",
+    "bo-luat-lao-dong"
+  ],
+  "privacyPolicyUrl": "https://github.com/nguyenvansuai/hanhchinh-nhansu/blob/main/PRIVACY.md"
 }

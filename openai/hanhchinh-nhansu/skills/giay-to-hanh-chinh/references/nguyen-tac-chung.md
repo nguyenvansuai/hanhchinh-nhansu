@@ -8,9 +8,9 @@
 - Không tự ước lượng số liệu trong báo cáo, đề xuất.
 
 ## 2. Tính toán bằng công cụ, không tính nhẩm
-Mọi phép tính có hậu quả pháp lý hoặc tiền bạc phải dùng công cụ của plugin:
+Mọi phép tính có hậu quả pháp lý hoặc tiền bạc phải chạy công cụ đi kèm skill: `python3 scripts/cong_cu.py <tên_công_cụ> tham_so=giá_trị` (xem danh sách: `python3 scripts/cong_cu.py --ds`).
 
-| Việc | Công cụ (MCP) | Dòng lệnh (khi không có MCP) |
+| Việc | Công cụ | Ví dụ |
 |---|---|---|
 | Hạn xử lý, ngày làm việc, ngày lễ | `ngay_lam_viec`, `ngay_le_tet`, `cong_ngay_lich` | `python3 scripts/cong_cu.py ngay_lam_viec ...` |
 | Âm lịch | `doi_lich_am_duong` | |
@@ -24,7 +24,7 @@ Mọi phép tính có hậu quả pháp lý hoặc tiền bạc phải dùng cô
 | Sổ văn bản đi/đến | `cap_so_van_ban_di`, `dang_ky_van_ban_den`, `tra_cuu_so_van_ban` | |
 | Thể thức .docx | `kiem_tra_the_thuc`, `tao_van_ban_docx` | |
 
-Không có cả MCP lẫn Python → tự tính, ghi rõ "ước tính, cần kiểm tra lại" và trình bày từng bước.
+Không chạy được code → tự tính, ghi rõ "ước tính, cần kiểm tra lại" và trình bày từng bước.
 
 ## 3. Pháp lý: có số hiệu, có nhãn tin cậy
 - Viện dẫn ghi đủ: tên văn bản, số hiệu, điều, khoản. Ví dụ: "khoản 1 Điều 35 Bộ luật Lao động 2019".

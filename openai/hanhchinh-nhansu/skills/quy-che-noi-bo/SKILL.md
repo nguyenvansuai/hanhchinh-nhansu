@@ -44,3 +44,14 @@ Quy chế có nội dung ảnh hưởng quyền lợi NLĐ (làm việc từ xa,
 2. Dự thảo quyết định ban hành.
 3. Bảng **mức/giá trị cần lãnh đạo duyệt**.
 4. Kế hoạch phổ biến (họp, email, ký xác nhận đã đọc) – người dùng tự gửi.
+
+<!-- KET-NOI:BAT-DAU (sinh tự động từ scripts/ket_noi.json – sửa ở đó rồi chạy build) -->
+## Kết nối ứng dụng
+
+Connector dùng cho skill này: **Google Drive** · **Gmail** · **Microsoft 365 (Outlook, OneDrive/SharePoint, Teams)**. Đọc quy tắc trong `references/ket-noi.md` trước khi dùng.
+
+1. Đọc quy chế cũ, nội quy, quyết định liên quan trên Drive để dự thảo bản mới không mâu thuẫn.
+2. Lưu dự thảo quy chế vào Drive; tạo nháp email gửi các phòng góp ý, có hạn góp ý.
+
+**Khi chưa kết nối:** làm đủ phần soạn thảo, tính toán; đưa nội dung sẵn để người dùng tự dán vào email, lịch, thư mục; nhắc **một lần** cách bật connector, không dừng việc chỉ vì chưa kết nối.
+<!-- KET-NOI:KET-THUC -->

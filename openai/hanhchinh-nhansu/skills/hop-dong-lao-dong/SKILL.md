@@ -60,3 +60,15 @@ Báo tăng lao động BHXH trong tháng; cập nhật sổ quản lý lao độ
 
 ## Đầu ra
 HĐLĐ/phụ lục hoàn chỉnh · bảng **Thông tin cần bổ sung** · bảng rà soát (nếu rà HĐ có sẵn: `Điều | Mức | Vấn đề | Đề xuất câu chữ`) · căn cứ có nhãn tin cậy.
+
+<!-- KET-NOI:BAT-DAU (sinh tự động từ scripts/ket_noi.json – sửa ở đó rồi chạy build) -->
+## Kết nối ứng dụng
+
+Connector dùng cho skill này: **Google Drive** · **Gmail** · **Google Calendar** · **Microsoft 365 (Outlook, OneDrive/SharePoint, Teams)**. Đọc quy tắc trong `references/ket-noi.md` trước khi dùng.
+
+1. Lấy thông tin người lao động từ offer, hồ sơ trên Drive để điền HĐLĐ, không hỏi lại thông tin đã có.
+2. Lưu dự thảo HĐLĐ, phụ lục vào hồ sơ nhân viên trên Drive; tạo nháp email gửi người lao động đọc trước khi ký.
+3. Tạo sự kiện nhắc hạn: hết thử việc, hết hạn HĐLĐ xác định thời hạn (nhắc trước 30 ngày), trên lịch của người phụ trách nhân sự.
+
+**Khi chưa kết nối:** làm đủ phần soạn thảo, tính toán; đưa nội dung sẵn để người dùng tự dán vào email, lịch, thư mục; nhắc **một lần** cách bật connector, không dừng việc chỉ vì chưa kết nối.
+<!-- KET-NOI:KET-THUC -->

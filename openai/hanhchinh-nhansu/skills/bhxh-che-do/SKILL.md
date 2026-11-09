@@ -32,3 +32,15 @@ Sơ cứu, cấp cứu → khai báo, điều tra theo Luật ATVSLĐ → DN tr�
 
 ## Đầu ra
 Kết luận có phải đóng/được hưởng không (kèm căn cứ + nhãn) · bảng danh sách kê khai · hướng dẫn từng bước cho NLĐ (gửi Zalo/email dạng nháp) · lịch hạn · cảnh báo mẫu biểu cần tải mới.
+
+<!-- KET-NOI:BAT-DAU (sinh tự động từ scripts/ket_noi.json – sửa ở đó rồi chạy build) -->
+## Kết nối ứng dụng
+
+Connector dùng cho skill này: **Google Drive** · **Gmail** · **Google Calendar** · **Microsoft 365 (Outlook, OneDrive/SharePoint, Teams)**. Đọc quy tắc trong `references/ket-noi.md` trước khi dùng.
+
+1. Đọc danh sách lao động, bảng lương trên Drive để lập danh sách báo tăng/giảm, tính mức đóng.
+2. Tìm email thông báo của cơ quan BHXH, giấy tờ người lao động gửi (giấy khai sinh, giấy ra viện) để lập hồ sơ chế độ.
+3. Tạo nhắc hạn nộp hồ sơ, hạn đóng BHXH hằng tháng trên lịch người phụ trách.
+
+**Khi chưa kết nối:** làm đủ phần soạn thảo, tính toán; đưa nội dung sẵn để người dùng tự dán vào email, lịch, thư mục; nhắc **một lần** cách bật connector, không dừng việc chỉ vì chưa kết nối.
+<!-- KET-NOI:KET-THUC -->

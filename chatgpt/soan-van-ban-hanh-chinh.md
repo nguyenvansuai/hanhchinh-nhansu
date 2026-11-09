@@ -6,7 +6,7 @@
 1. ChatGPT → Explore GPTs → Create → tab Configure (hoặc tạo Project, mở Project instructions).
 2. Name: `soan-van-ban-hanh-chinh`. Description: chép dòng Mô tả ở trên.
 3. Dán khối **Instructions** bên dưới vào ô Instructions.
-4. Knowledge: tải lên `skills/soan-van-ban-hanh-chinh/references/mau-noi-dung.md`, `skills/soan-van-ban-hanh-chinh/references/nguyen-tac-chung.md`, `skills/soan-van-ban-hanh-chinh/references/the-thuc-nd30.md`.
+4. Knowledge: tải lên `skills/soan-van-ban-hanh-chinh/references/ket-noi.md`, `skills/soan-van-ban-hanh-chinh/references/mau-noi-dung.md`, `skills/soan-van-ban-hanh-chinh/references/nguyen-tac-chung.md`, `skills/soan-van-ban-hanh-chinh/references/the-thuc-nd30.md`.
 5. Bật **Code Interpreter & Data Analysis**, nén thư mục `skills/soan-van-ban-hanh-chinh/scripts/` thành zip và tải lên Knowledge.
 
 ## Instructions
@@ -65,4 +65,16 @@ Mẫu chi tiết từng loại: `file Knowledge mau-noi-dung.md`. Nguyên tắc 
 2. Bảng **Thông tin cần bổ sung**.
 3. Kết quả tự rà thể thức (số lỗi còn lại).
 4. File .docx (nếu người dùng yêu cầu) + nhắc bước cấp số, trình ký.
+
+<!-- KET-NOI:BAT-DAU (sinh tự động từ scripts/ket_noi.json – sửa ở đó rồi chạy build) -->
+## Kết nối ứng dụng
+
+Connector dùng cho skill này: **Google Drive** · **Gmail** · **Microsoft 365 (Outlook, OneDrive/SharePoint, Teams)**. Đọc quy tắc trong `file Knowledge ket-noi.md` trước khi dùng.
+
+1. Lấy tài liệu căn cứ, văn bản cũ cùng loại, mẫu của công ty trên Drive để giữ đúng giọng và số hiệu đang dùng.
+2. Lưu bản .docx đã soạn vào thư mục "Văn bản dự thảo" trên Drive (file mới, không ghi đè).
+3. Văn bản cần gửi đối tác hoặc toàn công ty: tạo nháp email kèm file, người nhận lấy từ phần "Nơi nhận".
+
+**Khi chưa kết nối:** làm đủ phần soạn thảo, tính toán; đưa nội dung sẵn để người dùng tự dán vào email, lịch, thư mục; nhắc **một lần** cách bật connector, không dừng việc chỉ vì chưa kết nối.
+<!-- KET-NOI:KET-THUC -->
 ````

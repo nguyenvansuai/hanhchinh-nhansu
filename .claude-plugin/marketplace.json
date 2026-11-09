@@ -1,6 +1,6 @@
 {
   "name": "hanhchinh-nhansu",
-  "description": "Plugin Hành chính – Nhân sự (HCNS) cho doanh nghiệp vừa và nhỏ Việt Nam 2026: văn bản đúng thể thức NĐ 30/2020, giấy tờ hành chính, kiểm tra trước trình ký, sổ văn bản đi/đến, lưu trữ hồ sơ, quy chế nội bộ, hội họp – sự kiện; tuyển dụng, hợp đồng lao động, onboarding/offboarding, nội quy – thỏa ước, đánh giá – lương thưởng, kỷ luật, chấm dứt HĐLĐ, BHXH, lịch tuân thủ. Kèm MCP server công cụ tính toán theo BLLĐ 2019 (trợ cấp, phép năm, thời hiệu, lương net/gross, lịch âm, ngày làm việc).",
+  "description": "Plugin Hành chính – Nhân sự (HCNS) cho doanh nghiệp vừa và nhỏ Việt Nam 2026: văn bản đúng thể thức NĐ 30/2020, giấy tờ hành chính, kiểm tra trước trình ký, sổ văn bản đi/đến, lưu trữ hồ sơ, quy chế nội bộ, hội họp – sự kiện; tuyển dụng, hợp đồng lao động, onboarding/offboarding, nội quy – thỏa ước, đánh giá – lương thưởng, kỷ luật, chấm dứt HĐLĐ, BHXH, lịch tuân thủ. Khai báo sẵn connector Gmail, Google Calendar, Google Drive, Microsoft 365, Zoom, Slack; kèm công cụ tính theo BLLĐ 2019 (trợ cấp, phép năm, thời hiệu, lương net/gross, lịch âm, ngày làm việc).",
   "owner": {
     "name": "nguyenvansuai",
     "url": "https://github.com/nguyenvansuai"
@@ -9,104 +9,388 @@
     {
       "name": "hanhchinh-nhansu",
       "source": "./",
-      "description": "TRỌN BỘ plugin: Plugin Hành chính – Nhân sự (HCNS) cho doanh nghiệp vừa và nhỏ Việt Nam 2026: văn bản đúng thể thức NĐ 30/2020, giấy tờ hành chính, kiểm tra trước trình ký, sổ văn bản đi/đến, lưu trữ hồ sơ, quy chế nội bộ, hội họp – sự kiện; tuyển dụng, hợp đồng lao động, onboarding/offboarding, nội quy – thỏa ước, đánh giá – lương thưởng, kỷ luật, chấm dứt HĐLĐ, BHXH, lịch tuân thủ. Kèm MCP server công cụ tính toán theo BLLĐ 2019 (trợ cấp, phép năm, thời hiệu, lương net/gross, lịch âm, ngày làm việc).",
+      "description": "TRỌN BỘ plugin: Plugin Hành chính – Nhân sự (HCNS) cho doanh nghiệp vừa và nhỏ Việt Nam 2026: văn bản đúng thể thức NĐ 30/2020, giấy tờ hành chính, kiểm tra trước trình ký, sổ văn bản đi/đến, lưu trữ hồ sơ, quy chế nội bộ, hội họp – sự kiện; tuyển dụng, hợp đồng lao động, onboarding/offboarding, nội quy – thỏa ước, đánh giá – lương thưởng, kỷ luật, chấm dứt HĐLĐ, BHXH, lịch tuân thủ. Khai báo sẵn connector Gmail, Google Calendar, Google Drive, Microsoft 365, Zoom, Slack; kèm công cụ tính theo BLLĐ 2019 (trợ cấp, phép năm, thời hiệu, lương net/gross, lịch âm, ngày làm việc).",
       "category": "hanh-chinh-nhan-su"
     },
     {
       "name": "bhxh-che-do",
       "source": "./skills/bhxh-che-do",
       "description": "Hướng dẫn nghiệp vụ bảo hiểm xã hội, bảo hiểm y tế, bảo hiểm thất nghiệp cho phòng HCNS theo Luật BHXH 2024 (hiệu lực 01/7/2025) và Luật Việc làm 2025 (hiệu lực 01/01/2026) — đối tượng tham gia bắt buộc (HĐLĐ từ đủ 1 tháng), tiền lương đóng và mức trần (50,6 triệu từ 01/7/2026), báo tăng/giảm/điều chỉnh, chế độ ốm đau, thai sản (lao động nữ sinh con, chồng nghỉ khi vợ sinh, khám thai, trợ cấp một lần), dưỡng sức phục hồi, tai nạn lao động – bệnh nghề nghiệp, trợ cấp thất nghiệp (điều kiện 12/24 tháng, nộp hồ sơ trong 3 tháng), chốt sổ, hồ sơ và thời hạn; soạn danh sách đề nghị, hướng dẫn NLĐ. Dùng khi người dùng nói \"báo tăng BHXH\", \"nhân viên nghỉ thai sản\", \"chồng nghỉ mấy ngày khi vợ sinh\", \"nghỉ ốm được hưởng bao nhiêu\", \"chốt sổ bảo hiểm\", \"nhân viên nghỉ việc hưởng thất nghiệp thế nào\", \"mức đóng BHXH tối đa\", \"cộng tác viên có phải đóng BHXH\".",
-      "category": "hanh-chinh-nhan-su"
+      "category": "hanh-chinh-nhan-su",
+      "mcpServers": {
+        "google-drive": {
+          "type": "http",
+          "url": "https://drivemcp.googleapis.com/mcp/v1"
+        },
+        "gmail": {
+          "type": "http",
+          "url": "https://gmailmcp.googleapis.com/mcp/v1"
+        },
+        "google-calendar": {
+          "type": "http",
+          "url": "https://calendarmcp.googleapis.com/mcp/v1"
+        },
+        "microsoft-365": {
+          "type": "http",
+          "url": "https://microsoft365.mcp.claude.com/mcp"
+        }
+      }
     },
     {
       "name": "cham-dut-hop-dong",
       "source": "./skills/cham-dut-hop-dong",
       "description": "Chấm dứt hợp đồng lao động đúng luật cho doanh nghiệp Việt Nam — xác định căn cứ (hết hạn, thỏa thuận, NLĐ đơn phương, NSDLĐ đơn phương vì không hoàn thành công việc/ốm đau dài ngày/lý do bất khả kháng, cho thôi việc do thay đổi cơ cấu – công nghệ – lý do kinh tế, sa thải), thời hạn báo trước, trường hợp NSDLĐ không được đơn phương chấm dứt (đang ốm, mang thai, nuôi con dưới 12 tháng), trợ cấp thôi việc/mất việc làm, hậu quả đơn phương chấm dứt trái luật của mỗi bên, phương án sử dụng lao động và thông báo trước 30 ngày khi cho thôi việc nhiều người; soạn thông báo, thỏa thuận chấm dứt, quyết định chấm dứt, thông báo không gia hạn. Dùng khi người dùng nói \"cho nhân viên nghỉ việc\", \"chấm dứt hợp đồng lao động\", \"nhân viên xin nghỉ không báo trước\", \"thỏa thuận chấm dứt\", \"cắt giảm nhân sự\", \"tái cơ cấu cho nghỉ việc\", \"có phải trả trợ cấp thôi việc không\", \"nhân viên đang mang thai có cho nghỉ được không\".",
-      "category": "hanh-chinh-nhan-su"
+      "category": "hanh-chinh-nhan-su",
+      "mcpServers": {
+        "gmail": {
+          "type": "http",
+          "url": "https://gmailmcp.googleapis.com/mcp/v1"
+        },
+        "google-calendar": {
+          "type": "http",
+          "url": "https://calendarmcp.googleapis.com/mcp/v1"
+        },
+        "google-drive": {
+          "type": "http",
+          "url": "https://drivemcp.googleapis.com/mcp/v1"
+        },
+        "microsoft-365": {
+          "type": "http",
+          "url": "https://microsoft365.mcp.claude.com/mcp"
+        }
+      }
     },
     {
       "name": "danh-gia-luong-thuong",
       "source": "./skills/danh-gia-luong-thuong",
       "description": "Đánh giá hiệu suất và chính sách lương thưởng cho doanh nghiệp vừa và nhỏ Việt Nam — xây KPI/OKR theo vị trí, chu kỳ và phiếu đánh giá, hiệu chỉnh (calibration), kế hoạch cải thiện hiệu suất (PIP), quy chế đánh giá mức độ hoàn thành công việc làm căn cứ khi chấm dứt HĐLĐ do thường xuyên không hoàn thành công việc; thang lương bảng lương (bậc 1 ≥ lương tối thiểu vùng 2026, khoảng cách bậc), quy chế lương – thưởng – phụ cấp (tham khảo ý kiến tổ chức đại diện NLĐ, công bố công khai), thưởng Tết/tháng 13, tăng lương định kỳ, so sánh gross – net – chi phí doanh nghiệp, tiền lương đóng BHXH. Dùng khi người dùng nói \"xây KPI cho nhân viên\", \"mẫu đánh giá cuối năm\", \"làm thang bảng lương\", \"quy chế lương thưởng\", \"tăng lương bao nhiêu\", \"nhân viên không đạt KPI thì xử lý sao\", \"tính chi phí lương cho công ty\", \"thưởng Tết có bắt buộc không\".",
-      "category": "hanh-chinh-nhan-su"
+      "category": "hanh-chinh-nhan-su",
+      "mcpServers": {
+        "google-drive": {
+          "type": "http",
+          "url": "https://drivemcp.googleapis.com/mcp/v1"
+        },
+        "gmail": {
+          "type": "http",
+          "url": "https://gmailmcp.googleapis.com/mcp/v1"
+        },
+        "google-calendar": {
+          "type": "http",
+          "url": "https://calendarmcp.googleapis.com/mcp/v1"
+        },
+        "microsoft-365": {
+          "type": "http",
+          "url": "https://microsoft365.mcp.claude.com/mcp"
+        }
+      }
     },
     {
       "name": "giay-to-hanh-chinh",
       "source": "./skills/giay-to-hanh-chinh",
       "description": "Soạn nhanh giấy tờ hành chính thường ngày của phòng hành chính doanh nghiệp Việt Nam — giấy mời họp/sự kiện, giấy giới thiệu (đi liên hệ ngân hàng, thuế, BHXH, nhận hàng), giấy ủy quyền (ký văn bản, nhận hồ sơ, giao dịch ngân hàng, nộp hồ sơ), giấy đi đường/quyết định cử đi công tác, giấy xác nhận đang làm việc/thu nhập (vay ngân hàng, visa, học cho con), đơn xin nghỉ phép, đề nghị tạm ứng – thanh toán công tác phí, phiếu đề xuất mua văn phòng phẩm, thư cảm ơn, thư chúc mừng đối tác. Dùng khi người dùng nói \"làm giấy giới thiệu\", \"viết giấy ủy quyền\", \"giấy mời họp\", \"xác nhận nhân viên đang làm việc\", \"giấy đi công tác\", \"đơn xin nghỉ phép\", \"giấy xác nhận thu nhập để vay ngân hàng\".",
-      "category": "hanh-chinh-nhan-su"
+      "category": "hanh-chinh-nhan-su",
+      "mcpServers": {
+        "gmail": {
+          "type": "http",
+          "url": "https://gmailmcp.googleapis.com/mcp/v1"
+        },
+        "google-drive": {
+          "type": "http",
+          "url": "https://drivemcp.googleapis.com/mcp/v1"
+        },
+        "microsoft-365": {
+          "type": "http",
+          "url": "https://microsoft365.mcp.claude.com/mcp"
+        }
+      }
     },
     {
       "name": "hoi-hop-su-kien",
       "source": "./skills/hoi-hop-su-kien",
       "description": "Tổ chức hội họp và sự kiện nội bộ cho phòng hành chính doanh nghiệp Việt Nam — lên lịch họp (tránh ngày lễ, kiểm tra lịch trống qua Google/Outlook Calendar), chương trình họp, giấy mời, chuẩn bị tài liệu và phòng họp/link trực tuyến, biên bản họp từ ghi chú hoặc transcript (ghi đúng ý kiến, chỉ ghi kết luận đã chốt), bảng theo dõi kết luận sau họp; sự kiện nội bộ: tất niên/YEP, khai xuân, team building, du lịch hè, 8/3, 20/10, Trung thu cho con nhân viên, kỷ niệm thành lập, đại hội cổ đông thường niên (hậu cần) — kế hoạch, ngân sách, checklist hậu cần, phân công, kịch bản MC. Dùng khi người dùng nói \"chuẩn bị cuộc họp\", \"lên lịch họp giao ban\", \"làm biên bản họp\", \"chuyển ghi chú thành biên bản\", \"tổ chức tất niên\", \"kế hoạch du lịch công ty\", \"kịch bản MC\", \"checklist sự kiện\".",
-      "category": "hanh-chinh-nhan-su"
+      "category": "hanh-chinh-nhan-su",
+      "mcpServers": {
+        "google-calendar": {
+          "type": "http",
+          "url": "https://calendarmcp.googleapis.com/mcp/v1"
+        },
+        "zoom": {
+          "type": "http",
+          "url": "https://mcp.zoom.us/mcp/zoom/streamable"
+        },
+        "gmail": {
+          "type": "http",
+          "url": "https://gmailmcp.googleapis.com/mcp/v1"
+        },
+        "google-drive": {
+          "type": "http",
+          "url": "https://drivemcp.googleapis.com/mcp/v1"
+        },
+        "microsoft-365": {
+          "type": "http",
+          "url": "https://microsoft365.mcp.claude.com/mcp"
+        }
+      }
     },
     {
       "name": "hop-dong-lao-dong",
       "source": "./skills/hop-dong-lao-dong",
       "description": "Soạn và rà soát hợp đồng lao động theo Bộ luật Lao động 2019 — HĐLĐ xác định thời hạn (tối đa 36 tháng, ký tối đa 2 lần), không xác định thời hạn, thử việc (thỏa thuận riêng hoặc trong HĐLĐ, thời hạn 180/60/30/6 ngày, lương ≥ 85%), phụ lục hợp đồng (tăng lương, điều chuyển, gia hạn), HĐLĐ với người quản lý/giám đốc thuê, lao động nước ngoài (giấy phép lao động), người cao tuổi, lao động chưa thành niên, bán thời gian, làm việc từ xa; nhận diện \"hợp đồng cộng tác viên/khoán việc\" thực chất là HĐLĐ (phải đóng BHXH); HĐLĐ điện tử; tạm hoãn, sửa đổi HĐLĐ; cảnh báo điều khoản trái luật (giữ bằng gốc, đặt cọc, phạt tiền, cấm nghỉ việc). Dùng khi người dùng nói \"soạn hợp đồng lao động\", \"làm HĐLĐ cho nhân viên mới\", \"hợp đồng thử việc\", \"phụ lục tăng lương\", \"hợp đồng cộng tác viên có phải đóng BHXH không\", \"rà hợp đồng lao động này\", \"hết hạn hợp đồng thì ký tiếp thế nào\".",
-      "category": "hanh-chinh-nhan-su"
+      "category": "hanh-chinh-nhan-su",
+      "mcpServers": {
+        "google-drive": {
+          "type": "http",
+          "url": "https://drivemcp.googleapis.com/mcp/v1"
+        },
+        "gmail": {
+          "type": "http",
+          "url": "https://gmailmcp.googleapis.com/mcp/v1"
+        },
+        "google-calendar": {
+          "type": "http",
+          "url": "https://calendarmcp.googleapis.com/mcp/v1"
+        },
+        "microsoft-365": {
+          "type": "http",
+          "url": "https://microsoft365.mcp.claude.com/mcp"
+        }
+      }
     },
     {
       "name": "kiem-tra-truoc-trinh-ky",
       "source": "./skills/kiem-tra-truoc-trinh-ky",
       "description": "Rà soát văn bản trước khi trình lãnh đạo ký — chạy công cụ kiểm tra thể thức trên file Word (.docx) hoặc nội dung dán vào theo Nghị định 30/2020 (khổ, lề, phông, Quốc hiệu, số ký hiệu, ngày tháng, nơi nhận, ./., KT./TL./TUQ.), rồi soát nội dung (thẩm quyền ký, căn cứ còn hiệu lực, số tiền bằng chữ khớp số, ngày hiệu lực, nhất quán tên gọi, phụ lục, địa chỉ còn quận/huyện, viện dẫn luật cũ như BLLĐ 2012, Sở LĐTBXH), xếp lỗi 3 mức CHẶN / CẦN SỬA / GỢI Ý. Chỉ báo cáo, không sửa file gốc. Dùng khi người dùng nói \"kiểm tra văn bản\", \"rà trước khi trình ký\", \"soát công văn này\", \"check quyết định\", \"văn bản này có sai gì không\", \"xem giúp tờ trình trước khi đưa sếp\".",
-      "category": "hanh-chinh-nhan-su"
+      "category": "hanh-chinh-nhan-su",
+      "mcpServers": {
+        "google-drive": {
+          "type": "http",
+          "url": "https://drivemcp.googleapis.com/mcp/v1"
+        },
+        "gmail": {
+          "type": "http",
+          "url": "https://gmailmcp.googleapis.com/mcp/v1"
+        },
+        "microsoft-365": {
+          "type": "http",
+          "url": "https://microsoft365.mcp.claude.com/mcp"
+        }
+      }
     },
     {
       "name": "ky-luat-lao-dong",
       "source": "./skills/ky-luat-lao-dong",
       "description": "Xử lý kỷ luật lao động đúng trình tự Bộ luật Lao động 2019 và Nghị định 145/2020 — xác minh vi phạm, lập biên bản sự việc, đối chiếu nội quy đã đăng ký, tính thời hiệu (6 hoặc 12 tháng) và ngày chậm nhất gửi thông báo họp (5 ngày làm việc), thông báo họp, biên bản cuộc họp xử lý kỷ luật có tổ chức đại diện NLĐ, quyết định kỷ luật (khiển trách, kéo dài thời hạn nâng lương, cách chức, sa thải – chỉ trong 5 trường hợp Điều 125), tạm đình chỉ công việc, bồi thường thiệt hại và khấu trừ lương, xóa kỷ luật, xử lý quấy rối tình dục tại nơi làm việc; chặn các cách làm trái luật (phạt tiền, trừ lương, kỷ luật khi NLĐ đang nghỉ ốm, mang thai). Dùng khi người dùng nói \"nhân viên vi phạm xử lý thế nào\", \"kỷ luật sa thải\", \"nhân viên tự ý nghỉ 5 ngày\", \"nhân viên trộm cắp\", \"lập biên bản vi phạm\", \"quyết định kỷ luật\", \"có được phạt tiền nhân viên không\", \"bồi thường làm hỏng tài sản\".",
-      "category": "hanh-chinh-nhan-su"
+      "category": "hanh-chinh-nhan-su",
+      "mcpServers": {
+        "gmail": {
+          "type": "http",
+          "url": "https://gmailmcp.googleapis.com/mcp/v1"
+        },
+        "google-calendar": {
+          "type": "http",
+          "url": "https://calendarmcp.googleapis.com/mcp/v1"
+        },
+        "google-drive": {
+          "type": "http",
+          "url": "https://drivemcp.googleapis.com/mcp/v1"
+        },
+        "microsoft-365": {
+          "type": "http",
+          "url": "https://microsoft365.mcp.claude.com/mcp"
+        }
+      }
     },
     {
       "name": "lich-tuan-thu-hcns",
       "source": "./skills/lich-tuan-thu-hcns",
       "description": "Lập lịch tuân thủ và nhắc việc cả năm cho phòng Hành chính – Nhân sự doanh nghiệp Việt Nam — hạn báo cáo tình hình thay đổi lao động (trước 05/6 và 05/12, Mẫu 01/PLI qua Cổng Dịch vụ công → Sở Nội vụ), báo cáo an toàn vệ sinh lao động, quyết toán thuế TNCN (phối hợp kế toán), ngày nghỉ lễ Tết và nghỉ bù, thông báo phương án nghỉ Tết trước 30 ngày, rà hợp đồng lao động sắp hết hạn (báo trước 15 ngày), hết thử việc, xóa kỷ luật, đối thoại định kỳ, khám sức khỏe, huấn luyện ATVSLĐ, gia hạn giấy phép lao động người nước ngoài; xuất file .ics nhập Google Calendar/Outlook có nhắc trước; tạo danh sách việc tháng từ danh sách nhân viên. Dùng khi người dùng nói \"lịch nộp báo cáo lao động\", \"tháng này HCNS phải làm gì\", \"nhắc hạn hợp đồng sắp hết\", \"lịch tuân thủ nhân sự năm 2027\", \"xuất lịch vào Google Calendar\", \"hạn báo cáo 6 tháng\".",
-      "category": "hanh-chinh-nhan-su"
+      "category": "hanh-chinh-nhan-su",
+      "mcpServers": {
+        "google-calendar": {
+          "type": "http",
+          "url": "https://calendarmcp.googleapis.com/mcp/v1"
+        },
+        "google-drive": {
+          "type": "http",
+          "url": "https://drivemcp.googleapis.com/mcp/v1"
+        },
+        "microsoft-365": {
+          "type": "http",
+          "url": "https://microsoft365.mcp.claude.com/mcp"
+        }
+      }
     },
     {
       "name": "luu-tru-ho-so",
       "source": "./skills/luu-tru-ho-so",
       "description": "Tổ chức lưu trữ hồ sơ, tài liệu doanh nghiệp Việt Nam — lập danh mục hồ sơ năm theo phòng ban, mã hồ sơ, thời hạn bảo quản (chứng từ kế toán 5/10 năm hoặc vĩnh viễn theo Luật Kế toán, hồ sơ thuế, hồ sơ nhân sự, hợp đồng, hồ sơ pháp lý doanh nghiệp, biên bản họp HĐQT), cách đặt tên file và cây thư mục trên Google Drive/SharePoint, số hóa tài liệu giấy, lưu văn bản điện tử có chữ ký số, lập hội đồng và biên bản tiêu hủy tài liệu hết hạn, xử lý dữ liệu cá nhân khi hết mục đích (CV ứng viên, hồ sơ nhân viên đã nghỉ). Dùng khi người dùng nói \"sắp xếp hồ sơ\", \"lưu trữ tài liệu bao lâu\", \"danh mục hồ sơ\", \"hồ sơ nào được hủy\", \"biên bản tiêu hủy tài liệu\", \"đặt tên file thống nhất\", \"số hóa hồ sơ\", \"tổ chức thư mục Drive\".",
-      "category": "hanh-chinh-nhan-su"
+      "category": "hanh-chinh-nhan-su",
+      "mcpServers": {
+        "google-drive": {
+          "type": "http",
+          "url": "https://drivemcp.googleapis.com/mcp/v1"
+        },
+        "microsoft-365": {
+          "type": "http",
+          "url": "https://microsoft365.mcp.claude.com/mcp"
+        }
+      }
     },
     {
       "name": "noi-quy-thoa-uoc",
       "source": "./skills/noi-quy-thoa-uoc",
       "description": "Xây dựng nội quy lao động đủ nội dung bắt buộc (Điều 118 BLLĐ 2019, Điều 69 NĐ 145/2020) kể cả phòng chống quấy rối tình dục tại nơi làm việc, danh mục hành vi vi phạm – hình thức kỷ luật – trách nhiệm vật chất; lấy ý kiến tổ chức đại diện người lao động; hồ sơ đăng ký nội quy với Sở Nội vụ (doanh nghiệp từ 10 lao động, nộp trong 10 ngày, hiệu lực sau 15 ngày); thỏa ước lao động tập thể (thương lượng, biểu quyết > 50%, gửi cơ quan lao động); quy chế dân chủ ở cơ sở tại nơi làm việc, đối thoại định kỳ, hội nghị người lao động. Dùng khi người dùng nói \"soạn nội quy lao động\", \"đăng ký nội quy\", \"công ty 12 người có phải đăng ký nội quy không\", \"quy định phòng chống quấy rối tình dục\", \"thỏa ước lao động tập thể\", \"quy chế dân chủ cơ sở\", \"tổ chức hội nghị người lao động\", \"đối thoại định kỳ\".",
-      "category": "hanh-chinh-nhan-su"
+      "category": "hanh-chinh-nhan-su",
+      "mcpServers": {
+        "google-drive": {
+          "type": "http",
+          "url": "https://drivemcp.googleapis.com/mcp/v1"
+        },
+        "gmail": {
+          "type": "http",
+          "url": "https://gmailmcp.googleapis.com/mcp/v1"
+        },
+        "google-calendar": {
+          "type": "http",
+          "url": "https://calendarmcp.googleapis.com/mcp/v1"
+        },
+        "microsoft-365": {
+          "type": "http",
+          "url": "https://microsoft365.mcp.claude.com/mcp"
+        }
+      }
     },
     {
       "name": "onboarding-offboarding",
       "source": "./skills/onboarding-offboarding",
       "description": "Tiếp nhận nhân viên mới và làm thủ tục nghỉ việc trọn gói cho phòng HCNS doanh nghiệp Việt Nam — danh mục hồ sơ cá nhân (không giữ bản gốc giấy tờ), mã số thuế cá nhân theo số định danh, đăng ký người phụ thuộc, báo tăng BHXH, cấp tài khoản – tài sản – thẻ, lịch hội nhập tuần đầu và mục tiêu 30-60-90 ngày, người kèm cặp; khi nghỉ việc: tính ngày nghỉ hợp lệ theo thời hạn báo trước, biên bản bàn giao công việc – tài sản – tài khoản, thu hồi quyền truy cập, thanh toán lương – phép chưa nghỉ – trợ cấp thôi việc trong 14 ngày làm việc, báo giảm và chốt sổ BHXH, chứng từ khấu trừ thuế TNCN, phỏng vấn nghỉ việc. Dùng khi người dùng nói \"nhân viên mới vào làm cần chuẩn bị gì\", \"checklist onboarding\", \"kế hoạch hội nhập\", \"nhân viên xin nghỉ việc\", \"thủ tục nghỉ việc\", \"biên bản bàn giao\", \"chốt sổ bảo hiểm\", \"tính tiền cho người nghỉ việc\".",
-      "category": "hanh-chinh-nhan-su"
+      "category": "hanh-chinh-nhan-su",
+      "mcpServers": {
+        "google-calendar": {
+          "type": "http",
+          "url": "https://calendarmcp.googleapis.com/mcp/v1"
+        },
+        "gmail": {
+          "type": "http",
+          "url": "https://gmailmcp.googleapis.com/mcp/v1"
+        },
+        "google-drive": {
+          "type": "http",
+          "url": "https://drivemcp.googleapis.com/mcp/v1"
+        },
+        "slack": {
+          "type": "http",
+          "url": "https://mcp.slack.com/mcp",
+          "oauth": {
+            "clientId": "1601185624273.8899143856786",
+            "callbackPort": 3118
+          }
+        },
+        "microsoft-365": {
+          "type": "http",
+          "url": "https://microsoft365.mcp.claude.com/mcp"
+        }
+      }
     },
     {
       "name": "quy-che-noi-bo",
       "source": "./skills/quy-che-noi-bo",
       "description": "Xây dựng và rà soát quy chế, quy định nội bộ cho doanh nghiệp Việt Nam — quy chế văn thư lưu trữ và sử dụng con dấu, chữ ký số; quy chế chi tiêu nội bộ, công tác phí, tiếp khách; quản lý tài sản, thiết bị, văn phòng phẩm, sử dụng xe; làm việc từ xa/hybrid; bảo mật thông tin và an toàn CNTT; sử dụng AI trong công việc; phòng cháy chữa cháy, an ninh văn phòng; quy trình mua sắm; kèm quyết định ban hành, quy trình lấy ý kiến tổ chức đại diện người lao động, công khai theo Luật Thực hiện dân chủ ở cơ sở. Dùng khi người dùng nói \"soạn quy chế\", \"làm quy định công tác phí\", \"quy chế sử dụng con dấu\", \"quy định làm việc từ xa\", \"chính sách bảo mật thông tin nội bộ\", \"quy định dùng ChatGPT/AI ở công ty\", \"rà soát quy chế cũ\".",
-      "category": "hanh-chinh-nhan-su"
+      "category": "hanh-chinh-nhan-su",
+      "mcpServers": {
+        "google-drive": {
+          "type": "http",
+          "url": "https://drivemcp.googleapis.com/mcp/v1"
+        },
+        "gmail": {
+          "type": "http",
+          "url": "https://gmailmcp.googleapis.com/mcp/v1"
+        },
+        "microsoft-365": {
+          "type": "http",
+          "url": "https://microsoft365.mcp.claude.com/mcp"
+        }
+      }
     },
     {
       "name": "so-van-ban-di-den",
       "source": "./skills/so-van-ban-di-den",
       "description": "Quản lý sổ văn bản đi, văn bản đến cho văn thư doanh nghiệp theo Nghị định 30/2020 — cấp số ký hiệu văn bản đi liên tục trong năm (01/QĐ-ABC, 02/ABC-HCNS) sau khi đã ký, đăng ký văn bản đến (số đến, ngày đến, cơ quan gửi, trích yếu), phân phối và giao người xử lý, tính hạn xử lý theo ngày làm việc trừ lễ Tết, cập nhật trạng thái, lọc văn bản quá hạn để nhắc việc, phát hiện văn bản đến đăng ký trùng; sổ lưu file CSV mở bằng Excel. Dùng khi người dùng nói \"cấp số công văn\", \"lấy số quyết định\", \"vào sổ văn bản đến\", \"có công văn của Sở gửi về\", \"văn bản nào sắp đến hạn\", \"công văn nào quá hạn chưa trả lời\", \"xuất sổ văn bản đi tháng này\".",
-      "category": "hanh-chinh-nhan-su"
+      "category": "hanh-chinh-nhan-su",
+      "mcpServers": {
+        "gmail": {
+          "type": "http",
+          "url": "https://gmailmcp.googleapis.com/mcp/v1"
+        },
+        "google-drive": {
+          "type": "http",
+          "url": "https://drivemcp.googleapis.com/mcp/v1"
+        },
+        "google-calendar": {
+          "type": "http",
+          "url": "https://calendarmcp.googleapis.com/mcp/v1"
+        },
+        "microsoft-365": {
+          "type": "http",
+          "url": "https://microsoft365.mcp.claude.com/mcp"
+        }
+      }
     },
     {
       "name": "soan-van-ban-hanh-chinh",
       "source": "./skills/soan-van-ban-hanh-chinh",
       "description": "Soạn văn bản hành chính của doanh nghiệp đúng thể thức Nghị định 30/2020/NĐ-CP và xuất file Word chuẩn — công văn (đề nghị, phúc đáp, giải trình, đôn đốc, gửi cơ quan nhà nước, ngân hàng, đối tác), quyết định (bổ nhiệm, điều động, khen thưởng, thành lập ban, ban hành quy chế), tờ trình xin phê duyệt, thông báo, kế hoạch, báo cáo; tự chọn tên loại, viết căn cứ, trích yếu, nơi nhận, thẩm quyền ký (KT., TM., TL., TUQ.), đọc số tiền bằng chữ, xuất .docx A4 lề chuẩn Times New Roman. Dùng khi người dùng nói \"soạn công văn\", \"viết quyết định\", \"làm tờ trình\", \"soạn thông báo\", \"viết kế hoạch\", \"làm báo cáo gửi sở\", \"phúc đáp công văn số...\", \"xuất file Word đúng thể thức\".",
-      "category": "hanh-chinh-nhan-su"
+      "category": "hanh-chinh-nhan-su",
+      "mcpServers": {
+        "google-drive": {
+          "type": "http",
+          "url": "https://drivemcp.googleapis.com/mcp/v1"
+        },
+        "gmail": {
+          "type": "http",
+          "url": "https://gmailmcp.googleapis.com/mcp/v1"
+        },
+        "microsoft-365": {
+          "type": "http",
+          "url": "https://microsoft365.mcp.claude.com/mcp"
+        }
+      }
     },
     {
       "name": "tuyen-dung",
       "source": "./skills/tuyen-dung",
       "description": "Tuyển dụng trọn quy trình cho doanh nghiệp Việt Nam — phân tích nhu cầu và mô tả công việc (JD), tin tuyển dụng đăng TopCV/VietnamWorks/ITviec/CareerViet/Facebook/LinkedIn không vi phạm phân biệt đối xử (tuổi, giới tính, vùng miền, tình trạng hôn nhân), sàng lọc CV theo tiêu chí có trọng số, câu hỏi phỏng vấn hành vi STAR và câu hỏi chuyên môn, phiếu chấm điểm, câu hỏi bị cấm, kiểm tra tham chiếu có sự đồng ý, thư mời phỏng vấn, thư mời nhận việc (offer) với lương gross/net tính đúng BHXH và thuế TNCN 2026, thư từ chối lịch sự, xử lý dữ liệu cá nhân ứng viên đúng Luật BVDLCN 2025. Dùng khi người dùng nói \"viết JD\", \"đăng tin tuyển dụng\", \"lọc CV\", \"bộ câu hỏi phỏng vấn\", \"phiếu đánh giá ứng viên\", \"gửi offer\", \"lương net bao nhiêu thì gross bao nhiêu\", \"thư từ chối ứng viên\".",
-      "category": "hanh-chinh-nhan-su"
+      "category": "hanh-chinh-nhan-su",
+      "mcpServers": {
+        "gmail": {
+          "type": "http",
+          "url": "https://gmailmcp.googleapis.com/mcp/v1"
+        },
+        "google-calendar": {
+          "type": "http",
+          "url": "https://calendarmcp.googleapis.com/mcp/v1"
+        },
+        "google-drive": {
+          "type": "http",
+          "url": "https://drivemcp.googleapis.com/mcp/v1"
+        },
+        "zoom": {
+          "type": "http",
+          "url": "https://mcp.zoom.us/mcp/zoom/streamable"
+        },
+        "slack": {
+          "type": "http",
+          "url": "https://mcp.slack.com/mcp",
+          "oauth": {
+            "clientId": "1601185624273.8899143856786",
+            "callbackPort": 3118
+          }
+        },
+        "microsoft-365": {
+          "type": "http",
+          "url": "https://microsoft365.mcp.claude.com/mcp"
+        }
+      }
     }
   ]
 }

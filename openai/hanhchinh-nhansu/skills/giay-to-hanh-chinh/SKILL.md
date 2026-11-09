@@ -44,3 +44,15 @@ Giấy tờ có số (GM, GGT, UQ, QĐ) → sau khi ký, cấp số bằng `cap_
 ## Đầu ra
 
 Giấy tờ hoàn chỉnh + bảng thông tin cần bổ sung + (nếu cần) file .docx qua `tao_van_ban_docx` (giấy nội bộ có thể `co_quoc_hieu=false` nếu quy chế công ty cho phép).
+
+<!-- KET-NOI:BAT-DAU (sinh tự động từ scripts/ket_noi.json – sửa ở đó rồi chạy build) -->
+## Kết nối ứng dụng
+
+Connector dùng cho skill này: **Gmail** · **Google Drive** · **Microsoft 365 (Outlook, OneDrive/SharePoint, Teams)**. Đọc quy tắc trong `references/ket-noi.md` trước khi dùng.
+
+1. Tìm thông tin cần điền (ngày vào làm, chức danh, thư mời của đối tác) trong email hoặc hồ sơ trên Drive người dùng chỉ.
+2. Giấy mời, giấy giới thiệu: tạo nháp email gửi người nhận, đính kèm bản .docx/.pdf.
+3. Lưu bản đã ký (nếu người dùng tải lên) vào thư mục hồ sơ tương ứng trên Drive.
+
+**Khi chưa kết nối:** làm đủ phần soạn thảo, tính toán; đưa nội dung sẵn để người dùng tự dán vào email, lịch, thư mục; nhắc **một lần** cách bật connector, không dừng việc chỉ vì chưa kết nối.
+<!-- KET-NOI:KET-THUC -->

@@ -1,0 +1,146 @@
+{
+  "connectors": ["gmail", "google-calendar", "google-drive", "microsoft-365", "zoom", "slack"],
+  "chung": [
+    "**Hồ sơ nhân sự là dữ liệu nhạy cảm**: lưu vào thư mục nhân sự có giới hạn quyền mà người dùng chỉ; không đưa lương, kỷ luật, sức khỏe của một người vào email nhóm hoặc kênh chat chung.",
+    "**Văn bản có hiệu lực pháp lý** (quyết định kỷ luật, chấm dứt, thông báo họp kỷ luật, HĐLĐ) chỉ tạo nháp; bản chính thức phải được người có thẩm quyền ký, đóng dấu rồi mới gửi."
+  ],
+  "chua_co": [
+    "Zalo / Zalo OA: chưa có connector chính thức; muốn nhắn Zalo tự động phải tự dựng qua n8n, Make hoặc Zapier.",
+    "Phần mềm nhân sự trong nước (MISA AMIS HRM, Base, 1Office, Fast): xuất file Excel rồi đưa vào chat, hoặc tự dựng connector qua API của hãng.",
+    "Cổng BHXH điện tử, Cổng dịch vụ công: không có connector; skill hướng dẫn thao tác và chuẩn bị số liệu để bạn tự nộp."
+  ],
+  "skills": {
+    "soan-van-ban-hanh-chinh": {
+      "dung": ["google-drive", "gmail"],
+      "viec": [
+        "Lấy tài liệu căn cứ, văn bản cũ cùng loại, mẫu của công ty trên Drive để giữ đúng giọng và số hiệu đang dùng.",
+        "Lưu bản .docx đã soạn vào thư mục \"Văn bản dự thảo\" trên Drive (file mới, không ghi đè).",
+        "Văn bản cần gửi đối tác hoặc toàn công ty: tạo nháp email kèm file, người nhận lấy từ phần \"Nơi nhận\"."
+      ]
+    },
+    "giay-to-hanh-chinh": {
+      "dung": ["gmail", "google-drive"],
+      "viec": [
+        "Tìm thông tin cần điền (ngày vào làm, chức danh, thư mời của đối tác) trong email hoặc hồ sơ trên Drive người dùng chỉ.",
+        "Giấy mời, giấy giới thiệu: tạo nháp email gửi người nhận, đính kèm bản .docx/.pdf.",
+        "Lưu bản đã ký (nếu người dùng tải lên) vào thư mục hồ sơ tương ứng trên Drive."
+      ]
+    },
+    "kiem-tra-truoc-trinh-ky": {
+      "dung": ["google-drive", "gmail"],
+      "viec": [
+        "Mở file cần kiểm tra trực tiếp từ Drive hoặc từ tệp đính kèm email khi người dùng chỉ tên file/thư.",
+        "Lưu báo cáo kiểm tra thành file mới cạnh file gốc (`..._Bao-cao-kiem-tra`), không sửa file gốc.",
+        "Cần gửi người soạn sửa: tạo nháp email liệt kê lỗi CHẶN / CẦN SỬA."
+      ]
+    },
+    "so-van-ban-di-den": {
+      "dung": ["gmail", "google-drive", "google-calendar"],
+      "viec": [
+        "Văn bản đến qua email: tìm thư có tệp đính kèm trong ngày (`has:attachment after:`), đọc trích yếu, số, ngày, cơ quan gửi để đăng ký vào sổ.",
+        "Lưu bản điện tử văn bản đi/đến vào thư mục theo năm – sổ trên Drive, tên file có số đến/số đi.",
+        "Văn bản có hạn xử lý: tạo sự kiện nhắc hạn trên lịch người được giao (sau khi xác nhận).",
+        "Chuyển văn bản cho người xử lý: tạo nháp email có ý kiến phân công và hạn xử lý."
+      ]
+    },
+    "luu-tru-ho-so": {
+      "dung": ["google-drive"],
+      "viec": [
+        "Đọc cấu trúc thư mục hiện có trên Drive, đối chiếu với danh mục hồ sơ để chỉ ra file đặt sai chỗ, sai tên, thiếu hồ sơ.",
+        "Tạo cây thư mục mới theo danh mục hồ sơ (sau khi xác nhận); không di chuyển, không xóa file cũ khi chưa được đồng ý.",
+        "Lập danh sách file hết thời hạn bảo quản để Hội đồng xét hủy – chỉ lập danh sách, không xóa."
+      ]
+    },
+    "quy-che-noi-bo": {
+      "dung": ["google-drive", "gmail"],
+      "viec": [
+        "Đọc quy chế cũ, nội quy, quyết định liên quan trên Drive để dự thảo bản mới không mâu thuẫn.",
+        "Lưu dự thảo quy chế vào Drive; tạo nháp email gửi các phòng góp ý, có hạn góp ý."
+      ]
+    },
+    "hoi-hop-su-kien": {
+      "dung": ["google-calendar", "zoom", "gmail", "google-drive"],
+      "viec": [
+        "Tìm khung giờ trống của người chủ trì và thành phần dự họp trên lịch; đề xuất 2–3 khung giờ.",
+        "Họp trực tuyến: tạo cuộc họp Zoom (hoặc Teams) lấy link; tạo sự kiện lịch có chương trình, link, tài liệu (sau khi xác nhận).",
+        "Gom tài liệu họp trên Drive vào một thư mục; tạo nháp giấy mời gửi thành phần dự họp.",
+        "Sau họp: lấy bản ghi Zoom/Teams nếu có để làm biên bản – chỉ ghi điều có thật, không bịa kết luận; lưu biên bản vào Drive."
+      ]
+    },
+    "tuyen-dung": {
+      "dung": ["gmail", "google-calendar", "google-drive", "zoom", "slack"],
+      "viec": [
+        "Lấy CV ứng viên gửi về hộp thư tuyển dụng (`subject:ứng tuyển has:attachment after:`), lưu CV vào thư mục vị trí tuyển trên Drive.",
+        "Tìm giờ trống của người phỏng vấn, tạo lịch phỏng vấn kèm link Zoom/Teams (sau khi xác nhận).",
+        "Tạo nháp thư mời phỏng vấn, thư mời nhận việc (offer), thư từ chối lịch sự cho từng ứng viên.",
+        "Tóm tắt kết quả sàng lọc gửi hội đồng tuyển dụng qua Slack/Teams – không đưa số điện thoại, CCCD, lương mong muốn vào kênh chung."
+      ]
+    },
+    "hop-dong-lao-dong": {
+      "dung": ["google-drive", "gmail", "google-calendar"],
+      "viec": [
+        "Lấy thông tin người lao động từ offer, hồ sơ trên Drive để điền HĐLĐ, không hỏi lại thông tin đã có.",
+        "Lưu dự thảo HĐLĐ, phụ lục vào hồ sơ nhân viên trên Drive; tạo nháp email gửi người lao động đọc trước khi ký.",
+        "Tạo sự kiện nhắc hạn: hết thử việc, hết hạn HĐLĐ xác định thời hạn (nhắc trước 30 ngày), trên lịch của người phụ trách nhân sự."
+      ]
+    },
+    "onboarding-offboarding": {
+      "dung": ["google-calendar", "gmail", "google-drive", "slack"],
+      "viec": [
+        "Nhân viên mới: tạo lịch hội nhập tuần đầu (gặp quản lý, đào tạo, nhận thiết bị) trên lịch các bên – sau khi xác nhận.",
+        "Tạo nháp email chào mừng, thư thông báo cho IT, kế toán cấp tài khoản, thiết bị; lập thư mục hồ sơ nhân viên trên Drive.",
+        "Đăng tin chào mừng lên kênh chung (Slack/Teams) sau khi xác nhận nội dung.",
+        "Nghỉ việc: tạo nhắc hạn thanh toán trong 14 ngày làm việc, nháp email biên bản bàn giao, xác nhận thu hồi tài khoản."
+      ]
+    },
+    "noi-quy-thoa-uoc": {
+      "dung": ["google-drive", "gmail", "google-calendar"],
+      "viec": [
+        "Đọc nội quy, thỏa ước cũ và ý kiến tổ chức đại diện người lao động trên Drive.",
+        "Lên lịch đối thoại định kỳ, hội nghị người lao động (sau khi xác nhận); tạo nháp thư mời.",
+        "Lưu dự thảo và hồ sơ đăng ký nội quy (gửi Sở Nội vụ) vào thư mục riêng trên Drive."
+      ]
+    },
+    "danh-gia-luong-thuong": {
+      "dung": ["google-drive", "gmail", "google-calendar"],
+      "viec": [
+        "Đọc bảng KPI, kết quả đánh giá, bảng lương (Google Sheets/Excel) trên Drive người dùng chỉ; không chép dữ liệu lương sang file khác ngoài yêu cầu.",
+        "Lên lịch kỳ đánh giá: hạn tự đánh giá, buổi trao đổi 1-1 (sau khi xác nhận).",
+        "Tạo nháp email thông báo kết quả, kế hoạch cải thiện (PIP) gửi riêng từng người – không gửi chung."
+      ]
+    },
+    "ky-luat-lao-dong": {
+      "dung": ["gmail", "google-calendar", "google-drive"],
+      "viec": [
+        "Tìm chứng cứ vi phạm người dùng chỉ (email, biên bản, chấm công trên Drive); chỉ ghi nhận điều có trong tài liệu.",
+        "Tạo nháp thông báo họp xử lý kỷ luật gửi người lao động và tổ chức đại diện, đủ thời gian báo trước tính bằng công cụ.",
+        "Tạo sự kiện họp kỷ luật và nhắc mốc hết thời hiệu trên lịch người phụ trách (sau khi xác nhận).",
+        "Lưu biên bản, quyết định dự thảo vào thư mục hồ sơ kỷ luật có giới hạn quyền."
+      ]
+    },
+    "cham-dut-hop-dong": {
+      "dung": ["gmail", "google-calendar", "google-drive"],
+      "viec": [
+        "Đọc HĐLĐ, đơn nghỉ việc, email trao đổi để xác định căn cứ và ngày báo trước.",
+        "Tạo nhắc hạn trên lịch: ngày nghỉ việc chính thức, hạn thanh toán, hạn trả sổ BHXH.",
+        "Tạo nháp thông báo chấm dứt, xác nhận nghỉ việc; lưu hồ sơ vào thư mục nhân viên trên Drive."
+      ]
+    },
+    "bhxh-che-do": {
+      "dung": ["google-drive", "gmail", "google-calendar"],
+      "viec": [
+        "Đọc danh sách lao động, bảng lương trên Drive để lập danh sách báo tăng/giảm, tính mức đóng.",
+        "Tìm email thông báo của cơ quan BHXH, giấy tờ người lao động gửi (giấy khai sinh, giấy ra viện) để lập hồ sơ chế độ.",
+        "Tạo nhắc hạn nộp hồ sơ, hạn đóng BHXH hằng tháng trên lịch người phụ trách."
+      ]
+    },
+    "lich-tuan-thu-hcns": {
+      "dung": ["google-calendar", "google-drive"],
+      "viec": [
+        "Đưa lịch nghĩa vụ cả năm vào Google Calendar/Outlook thành các sự kiện cả ngày có nhắc trước (sau khi xác nhận danh sách) – thay cho việc nhập file .ics thủ công.",
+        "Đọc danh sách nhân viên trên Drive để thêm mốc hết thử việc, hết hạn HĐLĐ, sinh nhật.",
+        "Lưu bảng lịch tuân thủ (Sheets/Excel) vào Drive."
+      ]
+    }
+  }
+}

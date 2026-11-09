@@ -27,7 +27,7 @@ Nêu mức lương (khoảng) – tin có lương thu hút hơn; ghi rõ gross h
 CV là dữ liệu cá nhân: chỉ dùng cho tuyển dụng; giữ CV để tuyển sau → cần ứng viên đồng ý.
 
 **4. Phỏng vấn** – bộ câu hỏi theo năng lực (STAR) + chuyên môn + tình huống; phiếu chấm thống nhất cho mọi người phỏng vấn. **Câu hỏi không được hỏi**: kế hoạch kết hôn/sinh con, đang mang thai, tôn giáo, đảng phái, bệnh sử không liên quan công việc.
-Lịch phỏng vấn: có `~~calendar` thì tìm giờ trống (chỉ tạo nháp khi người dùng xác nhận).
+Lịch phỏng vấn: có lịch (Google Calendar / Outlook) thì tìm giờ trống (chỉ tạo nháp khi người dùng xác nhận).
 
 **5. Tham chiếu** – chỉ liên hệ người tham chiếu khi ứng viên đồng ý; câu hỏi tập trung vào hành vi công việc có kiểm chứng.
 
@@ -40,4 +40,17 @@ Lịch phỏng vấn: có `~~calendar` thì tìm giờ trống (chỉ tạo nhá
 **7. Từ chối** – thư lịch sự, ngắn, không nêu lý do gây tranh cãi; hỏi đồng ý lưu hồ sơ cho đợt sau.
 
 ## Đầu ra
-JD + tin tuyển dụng (theo kênh) · bảng tiêu chí sàng lọc + kết quả · bộ câu hỏi + phiếu chấm · thư mời phỏng vấn/offer/từ chối · bảng tính lương offer (kèm căn cứ tham số). Email chỉ ở dạng **nháp** (`~~email`).
+JD + tin tuyển dụng (theo kênh) · bảng tiêu chí sàng lọc + kết quả · bộ câu hỏi + phiếu chấm · thư mời phỏng vấn/offer/từ chối · bảng tính lương offer (kèm căn cứ tham số). Email chỉ ở dạng **nháp** (Gmail / Outlook).
+
+<!-- KET-NOI:BAT-DAU (sinh tự động từ scripts/ket_noi.json – sửa ở đó rồi chạy build) -->
+## Kết nối ứng dụng
+
+Connector dùng cho skill này: **Gmail** · **Google Calendar** · **Google Drive** · **Zoom** · **Slack** · **Microsoft 365 (Outlook, OneDrive/SharePoint, Teams)**. Đọc quy tắc trong `references/ket-noi.md` trước khi dùng.
+
+1. Lấy CV ứng viên gửi về hộp thư tuyển dụng (`subject:ứng tuyển has:attachment after:`), lưu CV vào thư mục vị trí tuyển trên Drive.
+2. Tìm giờ trống của người phỏng vấn, tạo lịch phỏng vấn kèm link Zoom/Teams (sau khi xác nhận).
+3. Tạo nháp thư mời phỏng vấn, thư mời nhận việc (offer), thư từ chối lịch sự cho từng ứng viên.
+4. Tóm tắt kết quả sàng lọc gửi hội đồng tuyển dụng qua Slack/Teams – không đưa số điện thoại, CCCD, lương mong muốn vào kênh chung.
+
+**Khi chưa kết nối:** làm đủ phần soạn thảo, tính toán; đưa nội dung sẵn để người dùng tự dán vào email, lịch, thư mục; nhắc **một lần** cách bật connector, không dừng việc chỉ vì chưa kết nối.
+<!-- KET-NOI:KET-THUC -->

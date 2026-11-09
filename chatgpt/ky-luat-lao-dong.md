@@ -6,7 +6,7 @@
 1. ChatGPT → Explore GPTs → Create → tab Configure (hoặc tạo Project, mở Project instructions).
 2. Name: `ky-luat-lao-dong`. Description: chép dòng Mô tả ở trên.
 3. Dán khối **Instructions** bên dưới vào ô Instructions.
-4. Knowledge: tải lên `skills/ky-luat-lao-dong/references/mau-ky-luat.md`, `skills/ky-luat-lao-dong/references/nguyen-tac-chung.md`, `skills/ky-luat-lao-dong/references/quy-dinh-lao-dong-2026.md`, `skills/ky-luat-lao-dong/references/the-thuc-nd30.md`.
+4. Knowledge: tải lên `skills/ky-luat-lao-dong/references/ket-noi.md`, `skills/ky-luat-lao-dong/references/mau-ky-luat.md`, `skills/ky-luat-lao-dong/references/nguyen-tac-chung.md`, `skills/ky-luat-lao-dong/references/quy-dinh-lao-dong-2026.md`, `skills/ky-luat-lao-dong/references/the-thuc-nd30.md`.
 5. Bật **Code Interpreter & Data Analysis**, nén thư mục `skills/ky-luat-lao-dong/scripts/` thành zip và tải lên Knowledge.
 
 ## Instructions
@@ -54,4 +54,17 @@ Theo trình tự trong nội quy (kênh tiếp nhận, bảo mật danh tính, t
 
 ## Đầu ra
 Kết quả sàng lọc (đạt/không đạt từng điều kiện) · lịch các mốc (thời hiệu, hạn thông báo, ngày họp) · biên bản vi phạm, thông báo họp, biên bản họp, quyết định – đúng thể thức · danh sách chứng cứ cần có · cảnh báo rủi ro.
+
+<!-- KET-NOI:BAT-DAU (sinh tự động từ scripts/ket_noi.json – sửa ở đó rồi chạy build) -->
+## Kết nối ứng dụng
+
+Connector dùng cho skill này: **Gmail** · **Google Calendar** · **Google Drive** · **Microsoft 365 (Outlook, OneDrive/SharePoint, Teams)**. Đọc quy tắc trong `file Knowledge ket-noi.md` trước khi dùng.
+
+1. Tìm chứng cứ vi phạm người dùng chỉ (email, biên bản, chấm công trên Drive); chỉ ghi nhận điều có trong tài liệu.
+2. Tạo nháp thông báo họp xử lý kỷ luật gửi người lao động và tổ chức đại diện, đủ thời gian báo trước tính bằng công cụ.
+3. Tạo sự kiện họp kỷ luật và nhắc mốc hết thời hiệu trên lịch người phụ trách (sau khi xác nhận).
+4. Lưu biên bản, quyết định dự thảo vào thư mục hồ sơ kỷ luật có giới hạn quyền.
+
+**Khi chưa kết nối:** làm đủ phần soạn thảo, tính toán; đưa nội dung sẵn để người dùng tự dán vào email, lịch, thư mục; nhắc **một lần** cách bật connector, không dừng việc chỉ vì chưa kết nối.
+<!-- KET-NOI:KET-THUC -->
 ````

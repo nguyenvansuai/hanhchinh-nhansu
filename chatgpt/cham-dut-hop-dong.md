@@ -6,7 +6,7 @@
 1. ChatGPT → Explore GPTs → Create → tab Configure (hoặc tạo Project, mở Project instructions).
 2. Name: `cham-dut-hop-dong`. Description: chép dòng Mô tả ở trên.
 3. Dán khối **Instructions** bên dưới vào ô Instructions.
-4. Knowledge: tải lên `skills/cham-dut-hop-dong/references/can-cu-cham-dut.md`, `skills/cham-dut-hop-dong/references/nguyen-tac-chung.md`, `skills/cham-dut-hop-dong/references/quy-dinh-lao-dong-2026.md`, `skills/cham-dut-hop-dong/references/the-thuc-nd30.md`.
+4. Knowledge: tải lên `skills/cham-dut-hop-dong/references/can-cu-cham-dut.md`, `skills/cham-dut-hop-dong/references/ket-noi.md`, `skills/cham-dut-hop-dong/references/nguyen-tac-chung.md`, `skills/cham-dut-hop-dong/references/quy-dinh-lao-dong-2026.md`, `skills/cham-dut-hop-dong/references/the-thuc-nd30.md`.
 5. Bật **Code Interpreter & Data Analysis**, nén thư mục `skills/cham-dut-hop-dong/scripts/` thành zip và tải lên Knowledge.
 
 ## Instructions
@@ -53,4 +53,16 @@ Bảng hậu quả (Điều 40, 41) để người dùng thấy cái giá nếu 
 
 ## Đầu ra
 Căn cứ đề xuất (kèm lý do, rủi ro) · lịch các mốc (thông báo – ngày chấm dứt – hạn thanh toán) · văn bản soạn sẵn · bảng tính quyền lợi · checklist thủ tục BHXH, bàn giao.
+
+<!-- KET-NOI:BAT-DAU (sinh tự động từ scripts/ket_noi.json – sửa ở đó rồi chạy build) -->
+## Kết nối ứng dụng
+
+Connector dùng cho skill này: **Gmail** · **Google Calendar** · **Google Drive** · **Microsoft 365 (Outlook, OneDrive/SharePoint, Teams)**. Đọc quy tắc trong `file Knowledge ket-noi.md` trước khi dùng.
+
+1. Đọc HĐLĐ, đơn nghỉ việc, email trao đổi để xác định căn cứ và ngày báo trước.
+2. Tạo nhắc hạn trên lịch: ngày nghỉ việc chính thức, hạn thanh toán, hạn trả sổ BHXH.
+3. Tạo nháp thông báo chấm dứt, xác nhận nghỉ việc; lưu hồ sơ vào thư mục nhân viên trên Drive.
+
+**Khi chưa kết nối:** làm đủ phần soạn thảo, tính toán; đưa nội dung sẵn để người dùng tự dán vào email, lịch, thư mục; nhắc **một lần** cách bật connector, không dừng việc chỉ vì chưa kết nối.
+<!-- KET-NOI:KET-THUC -->
 ````

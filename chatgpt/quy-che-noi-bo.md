@@ -6,7 +6,7 @@
 1. ChatGPT → Explore GPTs → Create → tab Configure (hoặc tạo Project, mở Project instructions).
 2. Name: `quy-che-noi-bo`. Description: chép dòng Mô tả ở trên.
 3. Dán khối **Instructions** bên dưới vào ô Instructions.
-4. Knowledge: tải lên `skills/quy-che-noi-bo/references/khung-quy-che.md`, `skills/quy-che-noi-bo/references/nguyen-tac-chung.md`, `skills/quy-che-noi-bo/references/quy-dinh-lao-dong-2026.md`, `skills/quy-che-noi-bo/references/the-thuc-nd30.md`.
+4. Knowledge: tải lên `skills/quy-che-noi-bo/references/ket-noi.md`, `skills/quy-che-noi-bo/references/khung-quy-che.md`, `skills/quy-che-noi-bo/references/nguyen-tac-chung.md`, `skills/quy-che-noi-bo/references/quy-dinh-lao-dong-2026.md`, `skills/quy-che-noi-bo/references/the-thuc-nd30.md`.
 
 ## Instructions
 
@@ -54,4 +54,15 @@ Quy chế có nội dung ảnh hưởng quyền lợi NLĐ (làm việc từ xa,
 2. Dự thảo quyết định ban hành.
 3. Bảng **mức/giá trị cần lãnh đạo duyệt**.
 4. Kế hoạch phổ biến (họp, email, ký xác nhận đã đọc) – người dùng tự gửi.
+
+<!-- KET-NOI:BAT-DAU (sinh tự động từ scripts/ket_noi.json – sửa ở đó rồi chạy build) -->
+## Kết nối ứng dụng
+
+Connector dùng cho skill này: **Google Drive** · **Gmail** · **Microsoft 365 (Outlook, OneDrive/SharePoint, Teams)**. Đọc quy tắc trong `file Knowledge ket-noi.md` trước khi dùng.
+
+1. Đọc quy chế cũ, nội quy, quyết định liên quan trên Drive để dự thảo bản mới không mâu thuẫn.
+2. Lưu dự thảo quy chế vào Drive; tạo nháp email gửi các phòng góp ý, có hạn góp ý.
+
+**Khi chưa kết nối:** làm đủ phần soạn thảo, tính toán; đưa nội dung sẵn để người dùng tự dán vào email, lịch, thư mục; nhắc **một lần** cách bật connector, không dừng việc chỉ vì chưa kết nối.
+<!-- KET-NOI:KET-THUC -->
 ````

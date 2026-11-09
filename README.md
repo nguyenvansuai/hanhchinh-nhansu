@@ -1,6 +1,6 @@
 # Plugin Hành chính – Nhân sự (HCNS) cho doanh nghiệp Việt Nam 2026
 
-Plugin trọn bộ cho **nhân viên và trưởng phòng Hành chính – Nhân sự** ở doanh nghiệp vừa và nhỏ (một người làm cả hai mảng, đúng thực tế phổ biến ở Việt Nam). Gồm **16 skill**, **6 lệnh quy trình**, **1 agent thẩm định** và **1 connector MCP** chứa 20 công cụ tính toán theo pháp luật hiện hành:
+Plugin trọn bộ cho **nhân viên và trưởng phòng Hành chính – Nhân sự** ở doanh nghiệp vừa và nhỏ (một người làm cả hai mảng, đúng thực tế phổ biến ở Việt Nam). Gồm **16 skill**, **6 lệnh quy trình**, **1 agent thẩm định**, **connector khai báo sẵn** (Gmail, Google Calendar, Google Drive, Microsoft 365, Zoom, Slack) và 20 công cụ tính toán theo pháp luật hiện hành đi kèm từng skill:
 
 - Văn bản đúng thể thức **Nghị định 30/2020/NĐ-CP**, xuất file Word chuẩn; kiểm tra thể thức tự động.
 - Lao động theo **Bộ luật Lao động 2019**, **NĐ 145/2020**, **Luật BHXH 2024**, **Luật Việc làm 2025**; lương tối thiểu vùng **NĐ 293/2025**; giảm trừ gia cảnh **NQ 110/2025**; biểu thuế TNCN 5 bậc 2026.
@@ -44,8 +44,11 @@ Nguyên tắc: **không bịa** (thiếu thì `[CẦN BỔ SUNG]`), **tính bằ
 `tham-dinh-hcns` – thẩm định độc lập văn bản/quyết định nhân sự trước khi ban hành (tính lại mọi con số bằng công cụ).
 
 ### Connector
-- **Có sẵn:** MCP server `hcns-cong-cu` (chạy trên máy, chỉ cần Python 3.8+) – 20 công cụ. Chi tiết: [CONNECTORS.md](CONNECTORS.md).
-- **Tùy chọn:** Gmail/Outlook, Google/Outlook Calendar, Google Drive/OneDrive, Slack/Teams, phần mềm HRM (qua file Excel hoặc API).
+<!-- KET-NOI-README:BAT-DAU (sinh tự động bởi scripts/ket_noi.py) -->
+Plugin **khai báo sẵn** connector: Gmail, Google Calendar, Google Drive, Microsoft 365 (Outlook, OneDrive/SharePoint, Teams), Zoom, Slack. Cài plugin xong chỉ cần bấm kết nối và đăng nhập một lần (tab **Connectors** của plugin). Mỗi skill ghi rõ dùng connector vào việc gì; chưa kết nối thì skill vẫn chạy, chỉ không tự lấy dữ liệu hoặc tạo nháp được. Email chỉ tạo bản nháp, mọi thao tác ghi phải được bạn xác nhận. Chi tiết: [CONNECTORS.md](CONNECTORS.md).
+<!-- KET-NOI-README:KET-THUC -->
+
+Ví dụ việc skill làm qua connector: lấy CV từ hộp thư, đặt lịch phỏng vấn kèm link Zoom, tạo nháp thư mời nhận việc; nhắc hạn hết thử việc, hết hạn HĐLĐ trên lịch; lưu quyết định vào Drive.
 
 ## Cài đặt
 
@@ -65,21 +68,21 @@ Nguyên tắc: **không bịa** (thiếu thì `[CẦN BỔ SUNG]`), **tính bằ
 /plugin install ky-luat-lao-dong@hanhchinh-nhansu
 ```
 
-Tên cài = tên skill trong bảng trên. Skill lẻ vẫn dùng được công cụ qua `scripts/cong_cu.py` đi kèm (không có MCP, lệnh, agent).
+Tên cài = tên skill trong bảng trên. Skill lẻ có sẵn công cụ `scripts/cong_cu.py` và khai báo đúng các connector nó dùng (không có lệnh, agent).
 
 Cập nhật: `/plugin marketplace update hanhchinh-nhansu`
 
 ### Claude Desktop / Cowork
-Tải [`dist/hanhchinh-nhansu.plugin`](dist/) và cài plugin từ file (gồm cả connector, lệnh, agent).
+Tải [`dist/hanhchinh-nhansu.plugin`](dist/) và cài plugin từ file (gồm skill, lệnh, agent và connector khai báo sẵn), rồi mở tab **Connectors** của plugin để kết nối.
 
 ### Claude.ai (web, app) – từng skill
 1. Bật **Settings → Capabilities → Code execution and file creation**.
 2. **Settings → Capabilities → Skills → Upload skill** → chọn file trong [`dist/`](dist/), ví dụ `tuyen-dung.zip`.
-Mỗi file zip là một skill độc lập, có sẵn công cụ tính toán. Không tải file `.plugin` lên claude.ai.
+Mỗi file zip là một skill độc lập, có sẵn công cụ tính toán. Skill tải lên kiểu này không tự khai báo connector: bật Gmail, Calendar, Drive trong **Settings → Connectors** để skill dùng được.
 
 ### ChatGPT / Codex – cả bộ plugin (OpenAI)
 
-Gói plugin cho ChatGPT và Codex nằm ở [`openai/hanhchinh-nhansu/`](openai/hanhchinh-nhansu/), theo cấu trúc portable của OpenAI (`plugin.json`, `skills/`, `mcp.json`), gồm **23 skill** (lệnh quy trình và agent của bản Claude đã được chuyển thành skill).
+Gói plugin cho ChatGPT và Codex nằm ở [`openai/hanhchinh-nhansu/`](openai/hanhchinh-nhansu/), theo cấu trúc portable của OpenAI (`plugin.json`, `skills/`, `.app.json`), gồm **23 skill** (lệnh quy trình và agent của bản Claude đã được chuyển thành skill).
 
 **ChatGPT desktop / Codex** – cài cá nhân, không cần OpenAI duyệt:
 
@@ -93,9 +96,9 @@ codex plugin add hanhchinh-nhansu@hanhchinh-nhansu
 
 Hoặc trong ứng dụng ChatGPT desktop: **Plugins** → chọn nguồn **Hành chính – Nhân sự VN** → **Install**. Khi dùng: mở chat chế độ **Work**, gõ `@` và chọn plugin.
 
-Gói kèm MCP server chạy trên máy (cần Python 3.8+) nên thuộc loại **chỉ dùng trên desktop**. Skill vẫn tự tính bằng `scripts/cong_cu.py` khi không có MCP.
+Gói khai báo sẵn connector của ChatGPT trong `.app.json` (danh sách ở [CONNECTORS.md](CONNECTORS.md)): khi cài, ChatGPT đề nghị kết nối từng ứng dụng, mỗi người đăng nhập một lần. Không cần cài Python hay chạy server trên máy.
 
-**ChatGPT web / chia sẻ rộng**: muốn plugin xuất hiện trong thư mục plugin chung của ChatGPT phải gửi OpenAI duyệt qua [cổng nộp plugin](https://platform.openai.com/plugins) (cần xác minh danh tính; plugin có MCP chạy cục bộ hiện chỉ dành cho đối tác được OpenAI chấp thuận). File nén sẵn để nộp: [`dist/hanhchinh-nhansu-chatgpt.zip`](dist/). Quản trị viên workspace ChatGPT có thể **Publish** plugin cá nhân cho cả workspace.
+**ChatGPT web / chia sẻ rộng**: muốn plugin xuất hiện trong thư mục plugin chung của ChatGPT phải gửi OpenAI duyệt qua [cổng nộp plugin](https://platform.openai.com/plugins) (cần xác minh danh tính). File nén sẵn để nộp: [`dist/hanhchinh-nhansu-chatgpt.zip`](dist/). Quản trị viên workspace ChatGPT có thể **Publish** plugin cá nhân cho cả workspace.
 
 Sau khi sửa skill, sinh lại gói: `python3 scripts/build_openai.py`.
 
@@ -116,14 +119,14 @@ Mỗi skill có hướng dẫn trong [`chatgpt/`](chatgpt/) (dán Instructions v
 ```
 .claude-plugin/plugin.json        manifest plugin trọn bộ (+ icon.png)
 .claude-plugin/marketplace.json   danh mục: gói trọn bộ + 16 skill lẻ (sinh tự động)
-.mcp.json                         connector MCP cục bộ
+.mcp.json                         connector khai báo sẵn (sinh từ scripts/ket_noi.json)
 skills/<skill>/                   SKILL.md + references/ + scripts/ (công cụ đi kèm)
 commands/ agents/                 lệnh quy trình, agent thẩm định
-mcp/server.py                     MCP server stdio, không phụ thuộc thư viện
-tools/                            công cụ (lịch, văn thư, thể thức, lao động, lịch tuân thủ) + tham_so.py
+tools/                            công cụ (nguồn; build chép vào skills/<x>/scripts/) (lịch, văn thư, thể thức, lao động, lịch tuân thủ) + tham_so.py
 shared/                           tài liệu dùng chung (nguồn gốc, build chép vào skill)
 tests/test_cong_cu.py             kiểm thử công cụ
 scripts/build.py                  đồng bộ, sinh marketplace/chatgpt/dist, kiểm tra
+scripts/ket_noi.py + ket_noi.json  connector: .mcp.json, mục "Kết nối ứng dụng" trong skill, CONNECTORS.md
 ```
 
 ## Phát triển

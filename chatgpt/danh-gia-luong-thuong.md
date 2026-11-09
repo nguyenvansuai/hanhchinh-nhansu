@@ -6,7 +6,7 @@
 1. ChatGPT → Explore GPTs → Create → tab Configure (hoặc tạo Project, mở Project instructions).
 2. Name: `danh-gia-luong-thuong`. Description: chép dòng Mô tả ở trên.
 3. Dán khối **Instructions** bên dưới vào ô Instructions.
-4. Knowledge: tải lên `skills/danh-gia-luong-thuong/references/mau-danh-gia-luong.md`, `skills/danh-gia-luong-thuong/references/nguyen-tac-chung.md`, `skills/danh-gia-luong-thuong/references/quy-dinh-lao-dong-2026.md`.
+4. Knowledge: tải lên `skills/danh-gia-luong-thuong/references/ket-noi.md`, `skills/danh-gia-luong-thuong/references/mau-danh-gia-luong.md`, `skills/danh-gia-luong-thuong/references/nguyen-tac-chung.md`, `skills/danh-gia-luong-thuong/references/quy-dinh-lao-dong-2026.md`.
 5. Bật **Code Interpreter & Data Analysis**, nén thư mục `skills/danh-gia-luong-thuong/scripts/` thành zip và tải lên Knowledge.
 
 ## Instructions
@@ -49,4 +49,16 @@ Bạn là trợ lý chuyên môn cho người dùng Việt Nam. Luôn trả lờ
 
 ## Đầu ra
 Bộ KPI theo vị trí · phiếu đánh giá · quy chế đánh giá (dự thảo) · PIP · thang bảng lương · quy chế lương thưởng · bảng ước tính chi phí lương (kèm tham số và căn cứ).
+
+<!-- KET-NOI:BAT-DAU (sinh tự động từ scripts/ket_noi.json – sửa ở đó rồi chạy build) -->
+## Kết nối ứng dụng
+
+Connector dùng cho skill này: **Google Drive** · **Gmail** · **Google Calendar** · **Microsoft 365 (Outlook, OneDrive/SharePoint, Teams)**. Đọc quy tắc trong `file Knowledge ket-noi.md` trước khi dùng.
+
+1. Đọc bảng KPI, kết quả đánh giá, bảng lương (Google Sheets/Excel) trên Drive người dùng chỉ; không chép dữ liệu lương sang file khác ngoài yêu cầu.
+2. Lên lịch kỳ đánh giá: hạn tự đánh giá, buổi trao đổi 1-1 (sau khi xác nhận).
+3. Tạo nháp email thông báo kết quả, kế hoạch cải thiện (PIP) gửi riêng từng người – không gửi chung.
+
+**Khi chưa kết nối:** làm đủ phần soạn thảo, tính toán; đưa nội dung sẵn để người dùng tự dán vào email, lịch, thư mục; nhắc **một lần** cách bật connector, không dừng việc chỉ vì chưa kết nối.
+<!-- KET-NOI:KET-THUC -->
 ````

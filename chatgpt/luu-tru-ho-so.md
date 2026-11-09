@@ -6,7 +6,7 @@
 1. ChatGPT → Explore GPTs → Create → tab Configure (hoặc tạo Project, mở Project instructions).
 2. Name: `luu-tru-ho-so`. Description: chép dòng Mô tả ở trên.
 3. Dán khối **Instructions** bên dưới vào ô Instructions.
-4. Knowledge: tải lên `skills/luu-tru-ho-so/references/nguyen-tac-chung.md`, `skills/luu-tru-ho-so/references/thoi-han-bao-quan.md`.
+4. Knowledge: tải lên `skills/luu-tru-ho-so/references/ket-noi.md`, `skills/luu-tru-ho-so/references/nguyen-tac-chung.md`, `skills/luu-tru-ho-so/references/thoi-han-bao-quan.md`.
 5. Bật **Code Interpreter & Data Analysis**, nén thư mục `skills/luu-tru-ho-so/scripts/` thành zip và tải lên Knowledge.
 
 ## Instructions
@@ -57,4 +57,16 @@ Chứng từ kế toán: tiêu hủy theo quy định riêng của pháp luật 
 
 ## Đầu ra
 Danh mục hồ sơ (bảng/Excel), cây thư mục, quy tắc đặt tên, kế hoạch số hóa, hoặc bộ hồ sơ tiêu hủy (quyết định + danh mục + biên bản) – tùy yêu cầu.
+
+<!-- KET-NOI:BAT-DAU (sinh tự động từ scripts/ket_noi.json – sửa ở đó rồi chạy build) -->
+## Kết nối ứng dụng
+
+Connector dùng cho skill này: **Google Drive** · **Microsoft 365 (Outlook, OneDrive/SharePoint, Teams)**. Đọc quy tắc trong `file Knowledge ket-noi.md` trước khi dùng.
+
+1. Đọc cấu trúc thư mục hiện có trên Drive, đối chiếu với danh mục hồ sơ để chỉ ra file đặt sai chỗ, sai tên, thiếu hồ sơ.
+2. Tạo cây thư mục mới theo danh mục hồ sơ (sau khi xác nhận); không di chuyển, không xóa file cũ khi chưa được đồng ý.
+3. Lập danh sách file hết thời hạn bảo quản để Hội đồng xét hủy – chỉ lập danh sách, không xóa.
+
+**Khi chưa kết nối:** làm đủ phần soạn thảo, tính toán; đưa nội dung sẵn để người dùng tự dán vào email, lịch, thư mục; nhắc **một lần** cách bật connector, không dừng việc chỉ vì chưa kết nối.
+<!-- KET-NOI:KET-THUC -->
 ````
