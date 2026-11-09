@@ -1,0 +1,20 @@
+{
+  "name": "hanhchinh-nhansu",
+  "interface": {
+    "displayName": "Hành chính – Nhân sự VN"
+  },
+  "plugins": [
+    {
+      "name": "hanhchinh-nhansu",
+      "source": {
+        "source": "local",
+        "path": "./openai/hanhchinh-nhansu"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

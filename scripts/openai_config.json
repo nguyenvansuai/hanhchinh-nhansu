@@ -1,0 +1,30 @@
+{
+  "plugin_name": "hanhchinh-nhansu",
+  "display_name": "Hành chính – Nhân sự VN",
+  "short_description": "Văn bản NĐ 30, tuyển dụng, HĐLĐ, kỷ luật, BHXH cho doanh nghiệp Việt Nam 2026.",
+  "long_description": "16 skill cho nhân viên và trưởng phòng Hành chính – Nhân sự doanh nghiệp vừa và nhỏ Việt Nam: văn bản đúng thể thức Nghị định 30/2020, giấy tờ hành chính, kiểm tra trước trình ký, sổ văn bản đi/đến, lưu trữ, quy chế nội bộ, hội họp – sự kiện; tuyển dụng, hợp đồng lao động, onboarding/offboarding, nội quy – thỏa ước, đánh giá – lương thưởng, kỷ luật, chấm dứt HĐLĐ, BHXH, lịch tuân thủ. Kèm quy trình trọn gói (nhân viên mới, nghỉ việc, kỷ luật, trình ký, văn bản đến, lịch tháng) và công cụ tính theo Bộ luật Lao động 2019.",
+  "default_prompts": [
+    "Tính trợ cấp thôi việc cho nhân viên vào làm 01/3/2016, nghỉ 15/10/2026, lương bình quân 20 triệu.",
+    "Soạn quyết định bổ nhiệm trưởng phòng đúng thể thức Nghị định 30 và xuất file Word.",
+    "Nhân viên tự ý nghỉ 6 ngày liên tục, xử lý kỷ luật thế nào cho đúng luật?"
+  ],
+  "brand_color": "#1F4E79",
+  "keywords": [
+    "hanh-chinh",
+    "nhan-su",
+    "lao-dong",
+    "viet-nam"
+  ],
+  "mcp": {
+    "name": "hcns-cong-cu",
+    "args": [
+      "${PLUGIN_ROOT}/mcp/server.py"
+    ],
+    "thu_muc_kem": [
+      "mcp",
+      "tools"
+    ]
+  },
+  "repository": "https://github.com/nguyenvansuai/hanhchinh-nhansu",
+  "category": "Productivity"
+}
